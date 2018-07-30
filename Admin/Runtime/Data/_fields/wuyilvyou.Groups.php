@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'gid', 1 => 'group_name', 2 => 'uid', 3 => 'grouper_num', 4 => 'group_intro', 5 => 'group_pic', 6 => 'addtime', 7 => 'cid', 8 => 'state', '_autoinc' => true, '_pk' => 'gid', ); ?>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>武夷山驴友交流网--发布帖子</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">	
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/usercenter.css" type="text/css"/>
+</head>
+<body>
+	{include file="Public/header.html"}
+	<!--这是主体部分-->
+	<div class="w960" id="ucenter">
+		<div class="c-left">
+			<div id="c-nav">
+				<ul>
+					<li><a href="__APP__/Users/myshow" target="" title="">我的首页</a></li>
+					<li><a href="__APP__/Core" target="" title="">我的分享</a></li>
+					<li><a href="__APP__/MyGroup/index" target="" title="">我的话题</a></li>
+					<li><a href="__APP__/Users/myActive" target="" title="">我的邀约</a></li>
+				</ul>
+			</div>
+			<div class="c-con" id="addgrouppost">
+				<h1>{$smarty.session.user.name} 您好</h1>
+				<form action="__APP__/AddGroupPost/insert" method="post">
+					<input type="hidden" name="gid" value="{$smarty.get.gid}"/>
+					<table border="0" width="500" cellspacing="5" cellpadding="0">
+						<tr><td><label>标题:</label></td>
+							<td><input type="text" name="post_title"/></td>
+						</tr>
+						<tr><td></td>
+	
+						</tr>
+						<tr><td>选择话题:</td>
+							<td>
+								<select name="gid">
+									<option value="0">-请选择-</option>
+									{foreach $groupres as $vo}
+									<option value="{$vo.gid}" {if $vo.gid == $smarty.get.gid} selected{/if}>-{$vo.group_name}-</option>
+									{/foreach}
+								</select>
+							</td>	
+						</tr>
+						<tr><td></td>
+	
+						</tr>
+						<tr><td><label>内容:</label></td>
+							<td><textarea name="content" rows="20" cols="55"></textarea></td>
+						</tr>
+						<tr><td></td>
+							<td><input type="submit" value="提交"/><input type="submit" value="重置"/></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+		<div class="c-right">
+			<div id="news">
+				<b>了解我们的武夷山~</b>
+				<ul>
+					<li><a href="http://www.wuyiu.edu.cn/" target="" title="">武夷学院</a></li>
+					<li><a href="http://www.wys.gov.cn/" target="" title="">武夷山政府</a></li>
+				</ul>
+			</div>
+			<div class="right-ad01">
+				<img src="__PUBLIC__/Home/images/ad01.png" /> 
+			</div> 
+		</div>
+		<div class="clear"></div> 
+	</div> 
+	<!--主体部分结束-->
+
+	{include file="Public/footer.html"}
+</body>
+</html>

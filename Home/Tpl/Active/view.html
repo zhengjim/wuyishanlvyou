@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>武夷山驴友交流网--相约武夷</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">	
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/active.css" type="text/css"/>
+	<style rel="stylesheet" type="text/css">
+		#join_num{ display:inline;}
+	</style>
+	<!--参加、退出邀请JS-->
+	<script src="__PUBLIC__/Home/js/jquery-1.7.2.min.js"></script>
+	<script>
+		//参加邀请操作
+		function join(aid){
+			var uid = $("#uid").val();
+			//如果没有登录提示登录，如果登录了则执行回复操作
+			if(uid == undefined || uid == "" ){
+				alert('请先登录！');
+				window.location = "__APP__/Users/login";//如果没有登录则跳转到登录界面
+				return;
+			}else{
+				var aid = $("#aid").val();
+				$.ajax({
+					type: "POST",
+					url: "__APP__/Active/join/",
+					dataType: "json",
+					data:{ aid:aid},
+					success: function(msg){
+						if(msg.msg == "no-login"){
+							alert('登录超时！');
+						}else if(msg.msg == 'logined'){
+							alert('您已加入邀请！');
+						}else if(msg.msg == 'error'){
+							alert('加入失败！');
+						}else{
+							alert('加入成功！');
+							$("#join_num").html(msg.njnum);
+							$("#info li i").html("<a href='javascript:' onclick='dropOut("+aid+")'>我要退出</a>");
+
+						}
+					}
+				});
+
+			}
+
+		}
+
+		//退出邀请操作
+		function dropOut($aid){
+			var aid = $("#aid").val();
+			$.ajax({
+				type: "POST",
+				url: "__APP__/Active/dropOut/",
+				dataType: "json",
+				data:{ aid:aid},
+				success: function(msg){
+					if(msg.msg == 'success'){
+						alert('成功退出此邀请！');
+                        $("#join_num").html(msg.njnum);
+						$("#info li i").html("<a href='javascript:' onclick='join("+aid+")'>我要参加</a>");
+					}else{
+						alert('操作失败');
+					}
+				}
+			});
+
+		}
+
+	</script>
+</head>
+<body>
+	{include file="Public/header.html"}
+
+	<!--这是主体部分-->
+	<div class="w960 active" id="active-view">
+		<div class="left-box">
+			<div id="info-box">
+				<div class="active-img"><a href=""><img src="__PUBLIC__/uploads/active/a_{$info.photo}"/></a></div>
+				<div id="info"> 
+					<h1>{$info.active_name}</h1>
+
+					<li class="item">发起人:{$name}</li>
+					<li class="item">活动时间:{$info.start_time|date_format:"%Y-%m-%d"} 至 {$info.end_time|date_format:"%Y-%m-%d"}</li>
+					<li class="item">集合地址:{$info.address}</li>
+					<li class="item"><div id="join_num">{$info.join_num}</div>人参加 <i>{if $join_state == -1}<a href="javascript:" onclick="join({$smarty.get.aid})">我要参加</a>{else}<a href="javascript:" onclick="dropOut({$smarty.get.aid})">我要退出</a>{/if}</i></li>
+					<input type="hidden" id="aid" value="{$smarty.get.aid}"/>
+					<input type="hidden" id="uid" value="{$smarty.session.user.uid}"/>
+				</div>
+				<div class="clear"></div>
+
+			</div>
+			<br/>
+			<h3>邀请介绍  · · · · · ·</h3>
+			<div id="a-conent">
+				{$info.description}
+			</div>
+
+			<div id="list">
+				<div class="title">
+					<br/>
+					<h3>讨论  · · · · · ·</h3><span id="add-bar"><a href="__APP__/Active/AddPost/aid/{$smarty.get.aid}/">添加讨论</a></span>
+				</div>
+				{if $postlist}
+				<ul>
+					<li></li>
+					{foreach $postlist as $p}
+					<li><a href="__URL__/post/pid/{$p.pid}" class="post-t">{$p.title}</a><span class="from">来自:{$p.uname}</span><span id="replay">{$p.reply_num}个回应</span><i>{$p.addtime|date_format:"%Y-%m-%d"}</i></li>
+					{/foreach}
+				</ul>
+				<div class="pagelist">{$page}</div>
+				{/if}
+			</div>
+
+
+		</div>
+
+		<div class="c-right">
+			<div id="news">
+				<b>了解我们的武夷山~</b>
+				<ul>
+					<li><a href="http://www.wuyiu.edu.cn/" target="" title="">武夷学院</a></li>
+					<li><a href="http://www.wys.gov.cn/" target="" title="">武夷山政府</a></li>
+				</ul>
+			</div>
+			<div class="right-ad01">
+				<img src="__PUBLIC__/Home/images/ad01.png" />
+			</div>
+		</div>
+		<div class="clear">
+		</div>
+	</div>
+
+	<!--主体部分结束-->
+
+	{include file="Public/footer.html"}
+	<div id="active_box">
+	</div>
+	<div id="active_imgs"></div>
+	
+</body>
+</html>

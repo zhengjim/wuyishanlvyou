@@ -1,0 +1,191 @@
+/*第一部分网站推荐或介绍的样式*/
+.intro{
+	font-family:"微软雅黑";
+	margin-top:30px;
+	height:410px;
+	background:#fff;
+}
+.intro .left{
+	width:580px;
+	height:410px;
+	float:left;
+}
+.intro .left img{
+	border:0px;
+}
+.intro .right{
+	float:right;
+	padding:28px 29px 12px 26px;
+	width:322px;
+}
+.intro .right .intro-content{
+	height:318px;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+.intro .right .intro-content h2{
+	height:32px;
+	line-height:32px;
+	font-size:18px;
+	font-weight:normal;
+	color:#9C0000;
+	margin-bottom:18px;
+}
+.intro .right .intro-content h2 a{
+	color:#9C0000;
+}
+.intro .right .intro-content .cc{
+	
+}
+.intro .right .intro-content .cc p{
+	margin-bottom:32px;
+	line-height:22px;
+	color:#5F5F5F;
+	font-size:13px;
+}
+.intro .right .from{
+	padding-top:18px;
+	font-size:12px;
+	color:#5F5F5F;
+}
+.intro .right .from #share{
+	width:60px;
+	display:inline-block;
+	margin-left:30px;
+	color:#5F5F5F;
+	background:url(./images/share.png) no-repeat right;
+}
+/*第一部分网站推荐或介绍的样式结束*/
+
+
+/*首页主体部分样式*/
+#main{
+	margin-top: 30px;
+}
+
+/*日记部分*/
+/* #diary{
+
+}
+#diary h3{
+	text-indent: 22px;
+	height:37px;
+	line-height: 37px;
+	font-size: 22px;
+	padding: 8px 0px;
+	font-weight: normal;
+	border-bottom: 1px dotted #B1B1B1;
+}
+#diary ul{
+	margin:0px;
+	padding:0px 10px 30px 10px;
+}
+#diary ul li{
+	height:125px;
+	padding:32px 22px;
+	border-bottom:1px dotted #B1B1B1;
+}
+#diary ul li .list-l{
+	float:left;
+	width: 170px;
+}
+#diary ul li .list-l img{
+	border: 0px;
+}
+#diary ul li .list-r{
+	color:#5F5F5F;
+	float:right;
+	width: 380px;
+	height:125px;
+	overflow: hidden;
+}
+#diary ul li .list-r strong{
+	display: block;
+	clear: both;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	height:22px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+#diary ul li .list-r span{
+	display: block;
+	margin-bottom: 5px;
+}
+#diary ul li .list-r a{
+	color: #9C0000;
+}
+ */
+
+#diary { margin:auto; width:960px; margin-top:20px;}
+#diary .d_left { float:left; width:370px; height:530px;}
+#diary .l_top { display:block; width:600px; height:30px; line-height:30px;margin-top:20px; padding-left:10px; color:#d98175; font-size:24px;font-weight:bold;}
+#diary .l_module { float:left; width:170px; height:125px; margin:10px 15px 10px 0;}
+#diary .l_module .shade { display:block; width:170px; height:75px;}
+#diary .l_module .change { display:none; width:170px; height:50px; background:#fff;}
+#diary .l_module .change .title { display:block; line-height:25px; font-size:14px; color:#666;}
+#diary .l_module .change span { color:#999; margin-top:-10px;}
+#diary .l_module .change span a { color:#d98175;}
+#diary .l_module .change span i { color:#d98175;}
+#diary .d_middle { float:right; width:270px; height:510px;}
+#diary .d_middle ul { margin-top:30px;}
+#diary .d_middle ul li { margin-top:20px; padding-left:10px; padding-right:10px; font-size:13px;}
+#diary .d_middle ul li a { color:#387aac;}
+
+#diary .d_right { width:264px; height:510px;}
+#diary .r_top { display:block; width:264px; height:30px; line-height:30px; margin-top:20px; padding-left:10px; font-size:12px; color:#666;}
+#diary .r_top span { color:#d98175; font-weight:bold; font-size:16px;}
+#diary .r_top a { font-size:12px; color:#387aac;}
+#diary .r_centre { width:264px; height:460px;}
+#diary .d_right ul li { margin-top:10px; padding-left:10px; padding-right:10px; font-size:13px;}
+#diary .d_right ul li a { color:#387aac;}
+#diary .d_right ul li span { color:#999;}
+
+.ad-w960 { width:960px; height:90px; margin:20px auto;}
+#group { width:960px; height:640px; margin:20px auto;}
+#group_left { width:640px; height:640px;}
+#group .l_top { display:block; float:left; width:640px; height:30px; margin-top:30px; color:#d98175; font-weight:bold; font-size:24px; padding-left:20px;}
+#group .l_list { float:left; width:640px;}
+#group .l_list ul li { margin:20px 0 40px 0;}
+#group .l_list ul li .block { display:block; width:48px; height:45px; background-color:#fcc; float:left; text-align:center; color:#f66; font-size:14px; padding-top:5px;}
+#group .l_list ul li div { width:500px; margin-left:70px;}
+#group .l_list ul li a { color:#387aac; font-size:15px;}
+#group .l_list ul li .span { height:30px; line-height:30px; color:#666; font-size:12px;}
+#group_right { display: block;}
+#group .r_content { display: block; margin:20px 0 0 0;}
+#group .c_top { display:block; height:25px; padding:15px 0 0 5px; font-size:12px; color:#666;}
+#group .c_top span { color:#d98175; font-weight:bold; font-size:16px;}
+#group .c_top a { font-size:12px; color:#387aac;}
+#group .r_content ul li { margin:10px 0 30px 0;}
+#group .r_content ul li .block { display:block; width:50px; height:50px; float:left;}
+#group .r_content ul li div { width:200px; margin-left:60px;}
+#group .r_content ul li a { color:#387aac; font-size:13px;}
+#group .r_content ul li .span { height:25px; line-height:25px; color:#999; font-size:12px;}
+#activity { width:960px; height:370px; margin:20px auto;}
+#activity_left { float:left; width:650px; height:370px;}
+#activity .l_top { display:block; width:540px; height:20px; padding:30px 0 0 5px; font-size:12px; color:#666;}
+#activity .l_top span { color:#d98175; font-weight:bold; font-size:16px;}
+#activity .l_top a { font-size:12px; color:#654433;}
+#activity .l_list { float:left; width:240px; height:140px; margin:16px 30px 0 0;}
+#activity .l_list .block { display:block; width:70px; height:70px; float:left;}
+#activity .l_list div { width:160px; margin-left:80px;}
+#activity .l_list .a1 { line-height:20px; color:#654433; font-size:13px;}
+#activity .l_list .span { line-height:20px; color:#666; font-size:12px;}
+#activity .l_list .a2 { float:right; display:block; width:50px; height:17px; line-height:17px; background-image:url(../images/wycj.jpg); color:#fff; font-size:11px; text-align:center;}
+#activity_right { float:right;}
+#activity .r_top { display:block;  height:20px; padding:30px 0 0 5px; color:#d98175; font-size:14px;}
+#activity .r_list { width:260px; padding:10px;}
+#activity .r_list ul li { float:left; padding:0 10px 5px 0;}
+#activity .r_list a { font-size:12px; color:#644334;}
+/* 登录提示 */
+#hints {
+	position:relative;
+	margin-top:-24px;
+	margin-left:240px;
+	padding-bottom:20px;
+	width:150px;
+	height:12px;
+	z-index:101;
+	color:red;
+}

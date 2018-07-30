@@ -1,0 +1,64 @@
+{include file="Public/pagerForm.html"}
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="did" value="{$smarty.request.did}"/>
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					发表人：{$title.uname}
+				</td>
+				<td>
+					发表标题：{$title.title}
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar" >
+			<li><a class="delete" href="__URL__/del/id/{ldelim}item_id{rdelim}/navTabId/diaryreplylist" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+		</ul>
+	</div>
+
+
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th width="40">ID</th>
+				<th width="80">回复人</th>
+				<th width="280">回复内容</th>
+				<th width="110">回复时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach $list as $vo}
+			<tr target="item_id" rel="{$vo.id}">
+				<td>{$vo.id}</td>
+				<td>{$vo.uname}</td>
+				<td>{$vo.content}</td>
+				<td>{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}</td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({ldelim}numPerPage:this.value{rdelim})">
+				<option value="5" {if $numPerPage==5}selected{/if}>5</option>
+				<option value="10" {if $numPerPage==10}selected{/if}>10</option>
+				<option value="15" {if $numPerPage==50}selected{/if}>50</option>
+				<option value="20" {if $numPerPage==100}selected{/if}>100</option>
+				<option value="25" {if $numPerPage==150}selected{/if}>150</option>
+				<option value="30" {if $numPerPage==200}selected{/if}>200</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+	</div>
+</div>

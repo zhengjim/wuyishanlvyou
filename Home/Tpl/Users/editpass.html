@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>武夷山驴友交流网--密码修改页</title>
+	<script src="__PUBLIC__/Home/js/editpass.js"></script>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/public.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/index.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/register.css"/>
+	<style>
+		#header{
+			color: #666;
+			margin-top:20px;
+			background:#fff;
+			padding:20px 0px;
+		}
+		#header h1{
+			padding:0px 40px 0px 30px;
+			margin-top: 30px;
+			margin-bottom: 40px;
+			font-size: 24px;
+		}
+		#header form{
+			margin-bottom: 60px;
+		}
+		</style>
+</head>
+<body>
+	{include file="Public/header.html"}
+	<br/><br/>
+	<center>
+		<div id="header" class="w960">
+		<h1>密码修改页</h1>
+		<form action="__APP__/Users/updatePass" name="myform" method="post" onsubmit="return dosubmit()">
+			<table>
+				<tr>
+					<td align="right">原密码：</td>
+					<td><input type="password" name="oldpass"/></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td align="right">新密码：</td>
+					<td><input type="password" name="pass1"/>&nbsp;<span>6位以上字母数字</span></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td align="right">重复新密码：</td>
+					<td><input type="password" name="pass2"/><span></span></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td align="center"  colspan="2"><span class="bn-flat"><input  type="submit" value="更新密码" tabindex="8"></span></td>
+				</tr>
+			</table>
+			<div id="cw"></div>
+		</form>
+
+		</div>
+	</center>	
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<!--底部信息-->
+    {include file="Public/footer.html"}
+</body>
+</html>

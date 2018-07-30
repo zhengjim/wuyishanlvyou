@@ -1,0 +1,68 @@
+<!--
+<div class="pageContent">
+	{foreach $vo as $v}
+	<form method="post" action="__URL__/updateinfo/navTabId/adslist/callbackType/closeCurrent" class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="aid" value="{$v.aid}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>广告标题：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="ad_title" value="{$v.ad_title}"/></dd>
+			</dl>
+			<dl>
+				<dt>链接地址：</dt>
+				<dd><input type="text" class="required" size="10" style="width:100%" name="url" value="{$v.url}"/></dd>
+			</dl>
+			<dl>
+				<dt>过期时间：</dt>
+				<dd><input type="text" class="required" size="10" style="width:100%" name="endtime" value="{$v.endtime|date_format:"%Y-%m-%e"}"/></dd>
+			</dl>
+			<br/>
+			
+			{/foreach}
+		</div>
+		
+		
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+-->
+<!--广告信息的修改页-->
+<div class="pageContent">
+	<form method="post" action="__URL__/updateinfo/navTabId/adslist/callbackType/closeCurrent" class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<input type="hidden" name="aid" value="{$vo.aid}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>广告标题：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="ad_title" value="{$vo.ad_title}"/></dd>
+			</dl>
+			<dl>
+				<dt>链接地址：</dt>
+				<dd><input type="text" class="required" size="10" style="width:100%" name="url" value="{$vo.url}"/></dd>
+			</dl>
+			<dl>
+				<dt>状态修改：</dt>
+				<dd><input type="radio" name="state" value="0" {if $vo.state==0}checked{/if}/>待发布
+					<input type="radio" name="state" value="1" {if $vo.state==1}checked{/if}/>启用
+					<input type="radio" name="state" value="-1" {if $vo.state==-1}checked{/if}/>禁用</dd>
+			</dl>
+			<dl>
+				<dt>过期时间：</dt>
+				<dd><input type="text" class="required date" size="10" style="width:100%" name="endtime" value="{$vo.endtime|date_format:"%Y-%m-%e"}"/></dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

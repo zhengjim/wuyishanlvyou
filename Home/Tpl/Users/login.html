@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>武夷山驴友交流网--登陆页</title>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/public.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/login.css"/>
+	<style>
+		#content{
+			color: #666;
+			margin-top:20px;
+			background:#fff;
+			padding:20px 0px;
+		}
+		#content h1{
+			padding:0px 40px 0px 20px;
+			font-size: 24px;
+		}
+		.article form{
+			padding-left: 40px;
+		}
+	</style>
+</head>
+<body>
+	{include file="Public/header.html"}
+	<div id="content">
+		<h1>登录武夷山旅游交流网</h1>
+		<div class="article">
+			<form id="lzform" name="lzform" method="post" action="__APP__/Users/doLogin">
+				<div style="color:red;">
+					<label>&nbsp;</label>{$e=$smarty.get.e}{if $e==1}你被封号了{else if $e==2}账号密码有误{/if}
+				</div>
+				<div class="item">
+					<label>登录邮箱</label>
+					<input id="email" name="email" type="text" class="basic-input" maxlength="60" value="" tabindex="1">
+				</div>
+				<div class="item">
+					<label>密码</label>
+					<input id="password" name="pass" type="password" class="basic-input" maxlength="20" tabindex="2">
+				</div>
+
+				<div class="item captcha-item">
+					<label>验证码</label>
+					<img src='__APP__/Users/verify/' height="25" onclick="this.src='__APP__/Users/verify/?id='+Math.random"/>
+					<input type="text" name="usercode" size="6" style="display:block;line-height:5px;margin-left:70px;margin-top:10px;"/>
+				</div>
+
+				<div class="item">
+					<label>&nbsp;</label>
+					<input type="submit" value="登录" name="user_login" class="btn-submit" tabindex="5">
+				</div>
+			</form>
+		</div>
+			<ul id="side-nav" class="aside">
+				<li>&gt;&nbsp;还没有武夷山驴友帐号？<a rel="nofollow" href="__APP__/Users/register" style="color:blue;">立即注册</a></li>
+			</ul>
+	</div>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	{include file="Public/footer.html"}
+</body>
+</html>

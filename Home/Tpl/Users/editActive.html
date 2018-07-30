@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">	
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/usercenter.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/addActive.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/calendar/calendar-green.css" type="text/css"/>
+	<script type="text/javascript" src="__PUBLIC__/calendar/calendar.js"></script>
+	<script language='javascript' src="__PUBLIC__/calendar/main.js"></script>
+    <script src="__PUBLIC__/Home/js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	{include file="Public/header.html"}
+
+	<!--这是主体部分-->
+	<div class="w960" id="ucenter">
+		<div class="c-left">
+			{include file="Public/top.html"}
+
+			<!--发起健康知识表单-->
+			<div id="addActiveForm">
+				<div id="title"> 
+					<a href="javascript:" class="cur">健康知识修改</a>
+				</div>
+				<form action="__URL__/doEditActive" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="active_id" id="active_id" value="{$info.id}"/>
+				<!--有的地方是通过post的方法传过来健康知识类型，如果post不存在默认线上健康知识-->
+				<table border="0" cellpadding="5" cellspacing="0">
+					<tr>
+						<td>健康知识名称</td><td><input type="text" name="active_name" id="active_name" class="must" value="{$info.title}" disabled/></td>
+					</tr>
+					<tr>
+						<td>开始时间</td><td><input type="text" style="width:88px" value="{$info.start_time|date_format:"%Y-%m-%d %H"}" name="start_time" id="start_time"/> 点
+						<script language="javascript" type="text/javascript">
+							var showX = getElementLeft($Obj("start_time")) + 15;
+							var showY = (window.navigator.userAgent.indexOf("MSIE") >=1 )? getElementTop($Obj("start_time")) + 55 :  getElementTop($Obj("start_time")) + 25;
+
+							if((window.navigator.userAgent.indexOf("MSIE 7.0") >=1 )) {
+								showX = getElementLeft($Obj("start_time"))+105;
+								showY = getElementTop($Obj("start_time"))+1200;
+							}
+							if(window.navigator.userAgent.indexOf("MSIE 6.0")>=1)
+							{
+								Calendar.setup({
+									inputField     :    "start_time",
+									ifFormat       :    "%Y-%m-%d %H",
+									showsTime      :    true,
+									timeFormat     :    "24"
+									});
+							} else {
+									Calendar.setup({
+									inputField     :    "start_time",
+									ifFormat       :    "%Y-%m-%d %H",
+									showsTime      :    true,
+									position       :    [showX, showY],
+									timeFormat     :    "24"
+									});
+							}
+						</script>
+						</td>
+					</tr>
+					<tr>
+						<td>结束时间</td><td><input type="text" style="width:88px" value="{$info.end_time|date_format:"%Y-%m-%d %H"}" name="end_time" id="end_time"/> 点
+						<script language="javascript" type="text/javascript">
+							var showX = getElementLeft($Obj("end_time")) + 15;
+							var showY = (window.navigator.userAgent.indexOf("MSIE") >=1 )? getElementTop($Obj("end_time")) + 55 :  getElementTop($Obj("end_time")) + 25;
+
+							if((window.navigator.userAgent.indexOf("MSIE 7.0") >=1 )) {
+								showX = getElementLeft($Obj("end_time"))+105;
+								showY = getElementTop($Obj("end_time"))+1200;
+							}
+							if(window.navigator.userAgent.indexOf("MSIE 6.0")>=1)
+							{
+								Calendar.setup({
+									inputField     :    "end_time",
+									ifFormat       :    "%Y-%m-%d %H",
+									showsTime      :    true,
+									timeFormat     :    "24"
+									});
+							} else {
+									Calendar.setup({
+									inputField     :    "end_time",
+									ifFormat       :    "%Y-%m-%d %H",
+									showsTime      :    true,
+									position       :    [showX, showY],
+									timeFormat     :    "24"
+									});
+							}
+						</script></td>
+					</tr>
+					{if $smarty.post.type == 2}
+					<tr id="city">
+						<td>举行城市</td>
+						<td>
+							<input name="active_city"  id='old_city' value="{$city.id}" type="hidden"/>
+							<input name="active_city_f"  value="{$city.name}" disabled="disabled"/>
+							<a href="javascript:" id="edloc" style="color:#3177A8;" >选择其他城市</a>
+						</td>
+					</tr>
+					<tr id="address-box">
+						<td>具体地址</td>
+						<td><input type="text" name="address" id="address" class="must" value="{$info.address}"/></td>
+					</tr>
+					{/if}
+					<tr>
+						<td height="240" valign="top">健康知识介绍</td>
+						<td height="240" valign="top">
+							<textarea name="content" id="content" class="must">{$info.content}</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td></td><td><input type="submit" value="发布"/>  <input type="reset" value="重填"/></td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+		<div class="c-right">
+			<div id="news">
+				<b>试试更多有趣的内容</b>
+				<ul>
+					<li><a href="" target="" title="">双十一，来晒你的战利品！</a></li>
+					<li><a href="" target="" title="">大家来讲相亲的故事。</a></li>
+				</ul>
+			</div>
+			<div class="right-ad01">
+				<img src="__PUBLIC__/Home/images/ad01.png" /> 
+			</div> 
+		</div>
+		<div class="clear"></div> 
+	</div> 
+	<!--主体部分结束-->
+
+	{include file="Public/footer.html"}
+</body>
+</html>

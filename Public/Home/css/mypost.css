@@ -1,0 +1,265 @@
+/*设置页面初始样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; list-style:none;}/*css 重置*/
+body{ font:normal 12px/1.5"宋体","楷体","黑体",Verdana, Geneva, sans-serif; color:#000;}
+
+/* 用户发布的话题页面的主体div设置 */
+#main{ 
+	margin-left:auto;
+	margin-right:auto;
+	width:960px;
+	border:0px solid red;
+}
+
+#c-nav{
+	display:block;
+	margin:20px 50px;
+}
+#c-nav ul{
+	display:block;
+	clear:both;
+	height:30px;
+	line-height:30px;
+}
+#c-nav li{
+	float:left;
+	width:65px;
+	text-align:center;
+}
+#c-nav li a{
+	font-size:14px;
+	color:#d98175;
+}
+
+#add{
+	display:block;
+	padding:20px 15px;
+	background:#FFFCFC;
+	margin-bottom: 20px;
+}
+#add ul{
+	display:block;
+	height:50px;
+}
+#add ul li{
+	float:left;
+	width:105px;
+	text-align:center;
+	font-size:14px;
+}
+#add ul li span{
+	display: block;
+	text-align:center;
+	height:35px;
+}
+#add ul li i{
+	font-style: normal;
+	text-align: center;
+}
+#add ul li a{
+	color:#8F8F8F;
+}
+
+
+
+
+/* 主体顶部 */
+#main_top{
+
+
+}
+
+/* 主体左侧栏目设置开始 */
+#main_left{
+	width:600px;
+	margin:5px;
+	float:left;	
+	border:0px solid blue;
+
+}
+
+/* 对标题的设置 */
+.main_left_title{
+	width:590px;
+	height:30px;
+	margin:5px;
+	font-size:16px;
+	color:#AAAAAA;
+	padding-bottom:5px;
+	border:0px solid red;
+}
+
+.main_left_content{
+	width:590px;
+	height:20px;
+	margin:5px;
+	padding-top:5px;
+		background-color:#FFFFFF;
+	border-bottom:1px dashed #DDDDDD;
+}
+
+.main_left_c1{
+	width:200px;
+	height:15px;
+	float:left;
+	overflow:hidden;
+	border:0px solid red;
+	
+}
+
+.main_left_c1 a{
+	font-size:12px;
+	text-decoration:none;
+	color:#3377AA;	
+}
+
+.main_left_c2{
+	width:150px;
+	height:15px;
+	float:left;
+	margin-left:80px;
+	overflow:hidden;
+	border:0px solid red;
+}
+
+.main_left_c2 span{
+	font-size:12px;
+	color:#666666;
+}
+
+.main_left_c3{
+	width:90px;
+	height:15px;
+	float:left;
+	overflow:hidden;
+	margin-left:20px;
+	border:0px solid red;
+}
+
+.main_left_c3 span{
+	font-size:12px;
+	color:#3377AA;
+}
+
+.main_left_delete{
+	width:30px;
+	float:right;
+	border:0px solid red;
+}
+
+
+
+
+/* 分页设置 */
+.main_left_list_pag{
+	width:300px;
+	float:left;
+	margin-top:10px;
+	margin-left:290px;
+	color:#37a;
+	border:0px solid red;
+}
+
+.main_left_list_pag a{
+	color:#37a;
+}
+
+/* 主体左侧栏目设置结束 */
+
+/* 主体右侧栏目设置开始 */
+#main_right{
+	width:300px;
+	margin:5px;
+	float:right;
+}
+
+.main_right_title{
+	width:290px;
+	height:20px;
+	margin-top:15px;
+	margin-left:5px;
+	padding-bottom:5px;
+	font-size:16px;
+	color:#676767;
+	border-bottom:1px solid #D0E3FF;
+}
+
+.main_right_title span{
+	color:#3177AB;
+}
+
+.main_right_title a{
+	font-size:12px;
+	color:#999999;
+	margin-left:50px;
+}
+
+
+.main_right_content{
+	width:290px;
+	height:70px;
+	margin-left:5px;
+	background-color:#FFFFFF;	
+	border-bottom:1px solid #d0e3ff;
+	padding-top:15px;
+}
+
+.main_right_content img{
+	width:50px;
+	height:50px;
+	float:left;
+}
+
+/* 右侧小组名称设置 */
+.main_right_content li{
+	float:right;
+	width:240px;
+	overflow:hidden;
+
+}
+.main_right_content li b{
+	display:block;
+	margin-left:20px;
+	line-height:21px;
+	height:21px;
+	overflow:hidden;
+}
+.main_right_content li b a{	
+	display:block;
+	line-height:15px;
+	font-size:15px;
+	color:#3177AB;
+	font-weight:normal;
+	text-decoration:none;
+	float:left;
+	
+}
+.main_right_content span{
+	font-size:12px;
+	
+}
+
+.main_right_content li span{
+	margin-right:10px;
+	font-style:normal;
+	margin-top:15px;
+	margin-left:20px;
+	color:#999999;
+	line-height:40px;
+	font-size:13px;
+}
+
+.main_right_content span a{
+	margin-top:20px;
+	text-decoration:none;
+	color:#3177AB;
+}
+
+
+/* 主体右侧栏目设置结束 */
+
+/* 清除浮动 */
+.main_bottom{
+	width:100%;
+	display:block;
+	clear:both;
+}

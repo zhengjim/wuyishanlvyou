@@ -1,0 +1,120 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+margin: 0;
+padding: 0;
+}
+.w960{
+	width:960px;
+	display:block;
+	clear:both;
+	margin-left:auto;
+	margin-right:auto;
+	}
+ol, ul {
+list-style: none;
+}
+div {
+display: block;
+}
+body {
+font: 12px/1.6 arial,helvetica,sans-serif;
+}
+/*
+input, input[type="password"], input[type="search"], isindex {
+-webkit-appearance: textfield;
+padding: 1px;
+background-color: white;
+border: 2px inset;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+cursor: auto;
+}
+input, textarea, keygen, select, button, isindex {
+margin: 0em;
+font: -webkit-small-control;
+color: initial;
+letter-spacing: normal;
+word-spacing: normal;
+text-transform: none;
+text-indent: 0px;
+text-shadow: none;
+display: inline-block;
+text-align: start;
+}
+input[type="password"] {
+-webkit-text-security: disc;
+}*/
+#wrapper {
+width: 960px;
+margin: 0 auto;
+}
+#content, #footer {
+width: 960px;
+overflow: hidden;
+margin: 0 auto;
+}
+h1 {
+color: #494949;
+display: block;
+font-size: 25px;
+font-weight: bold;
+line-height: 1.1;
+margin: 0;
+padding: 0 0 30px;
+word-wrap: break-word;
+}
+.article {
+float: left;
+width: 590px;
+}
+.item {
+clear: both;
+margin: 15px 0;
+zoom: 1;
+}
+.btn-submit:hover {
+background-color: #4fca6c;
+border-color: #6aad54;
+}
+.btn-submit {
+cursor: pointer;
+color: #ffffff;
+background: #3fa156;
+border: 1px solid #528641;
+font-size: 14px;
+font-weight: bold;
+padding: 6px 26px;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+}
+label {
+display: inline-block;
+float: left;
+margin-right: 15px;
+text-align: right;
+width: 60px;
+font-size: 14px;
+line-height: 20px;
+vertical-align: baseline;
+}
+.aside {
+float: right;
+width: 310px;
+color: #666;
+}
+.aside li {
+padding-bottom: 20px;
+}
+a:visited {
+color: #669;
+text-decoration: none;
+}
+.tips, #location, .agreement-label {
+font-size: 12px;
+color: #808080;
+}

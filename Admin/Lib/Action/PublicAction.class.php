@@ -1,0 +1,1 @@
+<?phpclass PublicAction extends CommonAction{		public function updatepass(){   //重设会员密码，重写父类放入方法		//判断密码和重复密码是否一致		if($_POST['pass']!=$_POST['repass']){			$this->error("密码和重复密码不一致！");			return;		}		//对密码加密		$_POST['pass'] = md5($_POST['pass']);				parent::update();//调用父类的添加方法执行添加操作。	}}

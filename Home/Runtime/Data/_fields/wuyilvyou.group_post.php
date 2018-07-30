@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'group_post_id', 1 => 'gid', 2 => 'post_title', 3 => 'uid', 4 => 'like_num', 5 => 'keywords', 6 => 'descripition', 7 => 'click_num', 8 => 'pic', 9 => 'addtime', 10 => 'last_edit_time', '_autoinc' => true, '_pk' => 'group_post_id', ); ?>

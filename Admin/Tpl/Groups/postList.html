@@ -1,0 +1,74 @@
+{include file="Public/pagerForm.html"}
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> &nbsp; 关键字：<input type="text" name="keyword" value="{$smarty.post.keyword}" /> <!-- [登录名,真实姓名,电话] -->
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<!-- <li><a class="add" href="__URL__/add" target="dialog" width="550" height="420" rel="user_msg" title="添加新员工"><span>添加</span></a></li> -->
+			<li><a class="delete" href="__URL__/postDel/id/{ldelim}item_id{rdelim}/navTabId/gpostlist" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<!-- <li><a class="edit" href="__URL__/edit/id/{ldelim}item_id{rdelim}/navTabId/gpostlist"  width="550" height="420" target="dialog"><span>修改</span></a></li> -->
+			<!-- <li><a class="edit" href="__URL__/password/id/{ldelim}item_id{rdelim}/navTabId/grouppostlist"  width="400" height="220" target="dialog"><span>重设密码</span></a></li> -->
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th width="40" orderField="group_post_id" {if $smarty.request._order=='group_post_id'}class="{$smarty.request._sort}"{/if}>帖子id</th>
+				<th width="150">标题</th>
+				<th width="120">关键字</th>
+				<th width="140">描述/简介</th>
+				<th width="40">点击量</th>
+				<th width="120">添加时间</th>
+				<th width="120">最后修改时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach $gplist as $K=>$vo}
+				<tr target="item_id" rel="{$vo.group_post_id}">
+					<td>{$vo.group_post_id}</td>
+					<td>{$vo.post_title}</td>
+					<td>{$vo.keywords}</td>
+					<td>{$vo.descripition}</td>
+					<td>{$vo.click_num}</td>
+					<td>{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}</td>
+					<td>{$vo.last_edit_time|date_format:"%Y-%m-%d %H:%M:%S"}</td>
+				</tr>
+			{/foreach}
+		</tbody>
+		<!--{$smarty.get.gid}-->
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({ldelim}numPerPage:this.value{rdelim})">
+				<option value="10" {if $numPerPage==10}selected{/if}>10</option>
+				<option value="15" {if $numPerPage==15}selected{/if}>15</option>
+				<option value="20" {if $numPerPage==20}selected{/if}>20</option>
+				<option value="25" {if $numPerPage==25}selected{/if}>25</option>
+				<option value="30" {if $numPerPage==30}selected{/if}>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<!--{if $smarty.get.gid==$vo.gid}-->
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+		<!--{/if}-->
+	</div>
+</div>

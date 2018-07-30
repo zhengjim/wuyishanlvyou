@@ -1,0 +1,450 @@
+/*设置页面初始样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; list-style:none;}/*css 重置*/
+body{ font:normal 12px/1.5"宋体","楷体","黑体",Verdana, Geneva, sans-serif; color:#000;}
+img { border:0px; }
+
+/* 小组列表页主体div设置 */
+#main{ 
+	margin-left:auto;
+	margin-right:auto;
+	width:960px;
+	height:auto;
+	
+	
+}
+
+/* 小组列表顶部设置（显示小组名和发布话题数量） */
+#main_top{
+	margin:5px;
+	width:950px;
+	height:50px;
+	line-height:20px;
+	border:0px solid blue;
+	
+}
+
+/* 话题分类、发布人数，css样式设置 */
+.main_top_c{
+	margin-top:10px;
+	margin-left:5px;
+	width:500px;
+	height:30px;
+	line-height:28px;
+	float:left;
+	border:0px solid red;
+}
+
+.main_top_c span{
+	font-size:25px;
+	color:#D68375;
+}
+
+.main_top_c i{
+	font-size:15px;
+	font-style:normal;
+	color:#999999;
+}
+
+.main_top_c i span{
+	color:#C96545;
+}
+
+.main_top_addgroup{
+	width:100px;
+	margin-top:10px;
+	margin-left:5px;
+	line-height:28px;
+	float:left;
+	border:0px solid red;
+}
+
+.main_top_addgroup a{
+	font-size:20px;
+	color:#3177AB;
+
+}
+
+/* 小组首页左侧列表样式设置开始*/
+
+/* 小组和话题显示列表 */
+#main_left{
+	margin:5px;
+	width:600px;
+	height:auto;
+	float:left;
+	background-color:#FFFFFF;
+	border:0px solid red;
+
+}
+
+/* 小组简介设置 */
+.main_left_intro{
+	width:590px;
+	height:190px;
+	margin:5px;
+	background-color:#FFFFFF;
+	border-bottom:1px dashed #999999;
+}
+
+.main_left_intro_img{
+	width:120px;
+	/* height:170px; */
+	margin:5px;
+	float:left;
+	background-color:#FFFFFF;
+	border:0px solid blue;
+}
+
+.main_left_intro_img img{
+	width:120px;
+	height:120px;
+}
+
+.main_left_headman{
+	width:120px;
+	margin-top:15px;
+	margin-left:0px;
+	float:left;
+	border:0px solid red;
+}
+
+.main_left_headman span{
+	font-size:12px;
+	color:#3177AB;
+}
+
+.main_left_headman span i{
+	
+}
+
+
+.main_left_intro_char{
+	width:445px;
+	height:170px;
+	margin:5px;
+	float:left;
+}
+
+.main_left_intro_char span b{
+	font-size:20px;
+	color:#3177AB;
+}
+
+.main_left_intro_char span{
+	font-size:15px;
+	color:#999999;
+}
+
+
+
+
+/* 小组列表内容 */
+.main_left_c{
+	margin:2px;
+	width:595px;
+	height:170px;
+	margin-top:20px;
+	border:0px solid blue;
+}
+
+/* 列表内容左栏（喜欢数量的显示） */
+.main_left_c_l{
+	margin-top:5px;
+	margin-left:5px;
+	color:#CA6547;
+	width:45px;
+	height:49px;
+	background-color:#FAE8DA;
+	float:left;
+	font-size:12px;
+	overflow:hidden;
+}
+
+.main_left_c_l span{
+	margin-top:8px;
+}
+
+
+/* 列表内容右栏（显示小组话题标题、发帖人发的图片（小）、发帖内容、来自哪个组、发布的时间） */
+.main_left_c_r{
+	margin-top:5px;
+	margin-left:20px;
+	width:520px;
+	height:160px;
+	border-bottom:1px solid #d0e3ff;
+	float:left;
+}
+
+.main_left_c_r span{
+	color:#676767;
+}
+
+.main_left_c_r span i{
+	color:#989898;
+	font-style:normal;
+
+}
+
+/*设置ul li的样式*/
+.main_left_c_r ul{
+	height:60px;
+	margin-top:-10px;
+	background-color:#f7f7f7;
+}
+
+.main_left_c_r ul li{
+	list-style:none;
+	line-height:20px;
+}
+
+/* 对图片的宽、高进行控制 */
+.main_left_c_r img{
+	width:50px;
+	height:50px;
+	margin-left:10px;
+	float:left;
+}
+
+/*设置*/
+.main_left_c_r a{
+	margin-top:10px;
+	display:block;
+	line-height:15px;
+	font-size:15px;
+	color:#3177AB;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+/*设置p标签属性*/
+.main_left_c_r ul li p{
+	float:left;
+	color:#999999;
+	margin-left:20px;
+	display:block;
+	width:439px;
+	height:58px;
+	font-size:12px;
+	overflow:hidden;
+}
+
+.main_left_c_r ul li p a{
+	color:#999999;
+
+}
+
+
+/*对内容span标签进行设置*/
+.main_left_c_r span{
+	float:left;
+	margin-top:20px;
+	margin-left:5px;
+	font-size:12px;
+}
+
+/* 清除浮动 */
+.main_bottom{
+	clear:both;
+}
+/* 小组首页左侧列表样式设置结束*/
+
+
+/* 小组首页右侧列表样式设置开始*/
+
+/* 小组列表  */
+#main_right{
+	width:300px;
+	float:right;
+	margin:5px;
+	border:0px solid red;
+}
+
+/* 右侧列表顶部 */
+.main_right_top{
+	display:block;
+	height:auto;
+	border:0px solid red;
+	font-size:15px;
+	color:#676767;
+	border-bottom:1px solid #d0e3ff;
+}
+
+.main_right_top_fabu{
+	width:295px;
+	float:right;
+	margin:2px;
+	float:right;
+	height:50px;
+	background:url(../images/record.jpg) no-repeat;
+	border:0px solid blue;
+}
+
+.main_right_top_fabu1{
+	width:60px;
+	font-size:14px;
+	margin-top:16px;
+	margin-left:120px;
+	color:#3177AB;
+	border:0px solid red;
+}
+
+.main_right_top_fabu1 a{
+	color:#FFF;
+	cursor:pointer;
+}
+
+.main_right_top_add{
+	width:110px;
+	margin-top:20px;
+	float:left;
+	border:0px solid blue;
+
+}
+
+.main_right_top_exchange{
+	width:60px;
+	margin-top:20px;
+	float:right;
+	cursor:pointer;
+	border:0px solid blue;
+
+}
+/* 清除main_right_top所有浮动 */
+.main_right_top_eliminate{
+	clear:both;
+}
+
+/* 右侧列表内容 */
+.main_right_content{
+	width:300px;
+	height:455px;
+	background-color:#FFFFFF;	
+}
+
+.main_right_content_n{
+	display:block;
+	height:70px;
+	padding-top:20px;
+	border-bottom:1px solid #d0e3ff;
+	overflow:hidden;
+}
+
+/* 右侧小组列表头像图片设置 */
+.main_right_content_n1_img{
+	width:50px;
+	height:50px;
+	float:left;
+	overflow:hidden;
+	border:0px solid red;
+}
+
+.main_right_content_n2{
+	margin-left:20px;
+	float:left;
+	border:0px solid red;
+
+}
+
+/* 右侧小组名称设置 */
+.main_right_content li{
+	/* float:right;
+	width:240px;
+	overflow:hidden; */
+}
+.main_right_content_n2 b{
+	display:block;
+	line-height:21px;
+	height:21px;
+	overflow:hidden;
+}
+.main_right_content_n2 b a{	
+	display:block;
+	line-height:15px;
+	font-size:15px;
+	color:#3177AB;
+	font-weight:normal;
+	text-decoration:none;
+	float:left;
+	
+}
+.main_right_content_n2 span{
+	font-size:12px;
+	
+}
+
+.main_right_content_n2 span{
+	margin-top:15px;
+
+}
+
+.main_right_content_n2 i{
+	margin-right:10px;
+	font-style:normal;
+	margin-top:15px;
+	color:#999999;
+	line-height:40px;
+	font-size:13px;
+
+}
+
+
+.main_right_content_n2 span a{
+	margin-top:15px;
+	font-size:13px;
+	
+}
+
+.main_right_content_n2 span a{
+	margin-top:20px;
+	text-decoration:none;
+	color:#3177AB;
+
+}
+
+/* 对分页进行设置 */
+.main_left_c_page{
+	width:300px;
+	float:left;
+	margin-top:5px;
+	margin-left:290px;
+	color:#37a;
+	border:0px solid red;
+	
+}
+
+.main_left_c_page a{
+	color:#37a;
+}
+
+/* 公告属性设置 */
+.main_right_notice{
+
+
+
+}
+
+/* 广告位置属性设置 */
+.main_right_ad{
+	width:300px;
+	height:208px;
+	float:right;
+	overflow:hidden;
+	margin-top:50px;
+	margin-right:0px;
+	border:0px solid black;
+}
+
+/* 设置广告图片的大小 */
+.main_right_ad img{
+	
+}
+
+
+
+
+
+
+
+
+
+

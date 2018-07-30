@@ -1,0 +1,48 @@
+#addActiveForm{
+	background:#fff;
+	color:#666;
+	font-size: 12px;
+}
+#addActiveForm i{
+	height:20px;
+	line-height: 30px;
+	color:#f00;
+}
+#addActiveForm #title{
+	padding-left: 12px;
+	display: block;
+	clear: both;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	margin-top: 20px;
+	background: #f7f7f7;
+	color:#999;
+}
+#addActiveForm #title a{
+	color:#333;
+}
+#addActiveForm #title a.cur{
+	color:#37a;
+	font-weight: bold;
+}
+#addActiveForm table{
+	margin-top: 15px;
+	margin-left: 12px;
+}
+#addActiveForm table tr{
+	height:30px;
+	line-height: 30px;
+}
+#addActiveForm table input[type="text"]{
+	border:1px solid #ccc;
+	height:20px;
+	width:350px;
+}
+#addActiveForm textarea{
+	display: block;
+	clear: both;
+	width:450px;
+	height:200px;
+	border: 1px solid #CCC;
+}

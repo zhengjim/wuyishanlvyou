@@ -1,0 +1,54 @@
+<!--<div class="pageContent">
+	{foreach $vo as $v}
+	<form method="post" action="__URL__/updatepic/navTabId/adslist/callbackType/closeCurrent"  class="pageForm required-validate" 
+		enctype="multipart/form-data"
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="aid" value="{$vo.aid}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>广告图片：</dt>
+				<dd><input type="file" class="required" size="10" style="width:100%" name="pic"/></dd>
+				<img src="__PUBLIC__/uploads/ad/a_{$v.picture}">
+			</dl>
+			<br/>
+			
+			{/foreach}
+		</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>-->
+<!--广告的图片修改页-->
+<div class="pageContent">
+	<form method="post" action="__URL__/updatepic/navTabId/adslist/callbackType/closeCurrent" enctype="multipart/form-data" class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this,dialogAjaxDone);">
+		{foreach $vo as $v}
+		<input type="hidden" name="aid" value="{$v.aid}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>广告图片：</dt>
+				<dd><input type="file" class="required" size="10" style="width:100%" name="pic"/></dd>
+				
+			</dl>
+			<dl>
+				<dt>图片尺寸选择：</dt>
+				<dd><input type="radio" name="size" value="1" {if $vo.size==1}checked{/if}/>960*90
+					<input type="radio" name="size" value="2" {if $vo.size==2}checked{/if}/>250*208</dd>
+					<img src="__PUBLIC__/uploads/ad/a_{$v.picture}">
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+		{/foreach}
+	</form>
+</div>
+

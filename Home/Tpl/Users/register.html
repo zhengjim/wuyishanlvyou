@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>武夷山驴友交流网--注册页</title>
+	<script src="__PUBLIC__/Home/js/register.js"></script>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/public.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/register.css"/>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//获取select并绑定onchange事件
+			$("#pid").live("change",function(){ 
+				var ob = $(this); //获取当前下拉选择框对象
+				ob.nextAll("select").remove();
+				var val = ob.val();
+				//ajax加载子信息
+				$.ajax({
+					url:"__APP__/Users/doLoad",
+					type:"post",
+					data:{ pid:val},
+					dataType:"json",
+					success:function(data){
+						if(data==null){
+							return;
+						}
+						var str="<select name='city'>";
+						str+="<option value=\"0\">-请选择-</option>";
+						for(var i=0;i<data.length;i++){
+							str+="<option value=\""+data[i].id+"\">"+data[i].name+"</option>";
+						}
+						str+="</select>";
+						ob.after(str);
+					}
+				});
+			 });
+		});
+	</script>
+	<style>
+		#content{
+			color: #666;
+			margin-top:20px;
+			background:#fff;
+			padding:20px 0px;
+		}
+		#content h1{
+			padding:0px 40px 0px 20px;
+			font-size: 24px;
+		}
+		.article form{
+			padding-left: 40px;
+		}
+	</style>
+
+</head>
+<body>
+	{include file="Public/header.html"}
+	<div id="content" class="w960">
+		<h1>欢迎加入武夷山驴友交流网</h1>
+		<div id="cuowu" style="color:red;font-size:15px;float:left;margin-left:60px;"></div>
+		<div style="clear:both;"></div>
+		<div class="grid-16-8 clearfix">
+			<div class="article">
+				<form name="lzform" method="post" action="__APP__/Users/doRegister" onsubmit="return dosubmit()">
+					<div class="item extra-tips">
+						<label>邮箱</label>
+						<input id="email" name="email" type="text" class="basic-input" maxlength="60" tabindex="1"  >&nbsp;<span>如:wuyishan@qq.com</span>
+					</div>
+					<div class="item extra-tips">
+						<label>密码</label>
+						<input id="userpass" name="pass" type="password" class="basic-input" tabindex="2" maxlength="20">&nbsp;<span>6-8位字母数字</span>
+					</div>
+					<div class="item extra-tips">
+						<label>昵称</label>
+						<input id="name" name="name" type="text" class="basic-input" maxlength="15" tabindex="3" >&nbsp;<span></span>
+					</div>
+						<div class="item loc-item">
+							<label>常居地</label>
+							<span class="loc">
+								<select name="pid" id="pid">
+									<option value="0">-请选择-</option>
+									{foreach $list as $v}
+									<option value="{$v.id}">{$v.name}</option>
+									{/foreach}
+								</select>
+							</span>
+						</div>
+					<div class="item captcha-item">
+						<label>验证码</label>
+						<img src='__APP__/Users/verify/' height="25" onclick="this.src='__APP__/Users/verify/?id='+Math.random"/>
+						<input type="text" name="usercode" size="6" style="display:block;line-height:5px;margin-left:70px;margin-top:10px;"/>
+					</div>
+					<div class="item-submit">
+						<label>&nbsp;</label>
+						<input type="submit" value="注册"  id="button" class="btn-submit disabled" tabindex="6" >
+					</div>
+				</form>
+			</div>
+			<div class="aside">
+				<p class="pl">&gt;&nbsp;已经拥有武夷山驴友账号?<a rel="nofollow" href="__APP__/Users/login" style="color:blue;">直接登录</a></p><br/>
+			</div>
+		</div>
+    </div>
+    <br/>
+    <br/>
+    {include file="Public/footer.html"}
+</body>
+</html>

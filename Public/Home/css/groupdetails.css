@@ -1,0 +1,599 @@
+/*设置页面初始样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; list-style:none;}/*css 重置*/
+body{ font:normal 12px/1.5"宋体","楷体","黑体",Verdana, Geneva, sans-serif; color:#000;}
+
+/* 话题详情页主体设置 */
+#main{
+	margin-left:auto;
+	margin-right:auto;
+	width:960px;
+	height:auto;
+	border:0px solid red;
+}
+
+/* 小组列表顶部设置（） */
+#main_top{
+	margin:5px;
+	width:950px;
+	height:50px;
+	line-height:20px;
+	border:0px solid blue;
+}
+
+
+/* 话题详情页左侧栏目设置开始 */
+#main_left{
+	margin:5px;
+	width:600px;
+	float:left;
+	background-color:#FFFFFF;
+	border:0px solid blue;
+}
+
+/* 主体内容设置 */
+#main_left_title{
+	width:590px;
+	height:80px;
+	margin:5px;
+}
+
+.tit{
+	width:580px;
+	height:30px;
+	margin:5px;
+	/* border-bottom:1px solid #D0E3FF; */
+	
+}
+
+.tit span{
+	display:block;
+	margin-top:5px;
+	margin-left:220px;
+	font-size:18px;
+	color:#3177AB;
+}
+
+.aut{
+	width:180px;
+	height:20px;
+	margin-top:15px;
+	margin-left:80px;
+	float:left;
+	border:0px solid blue;
+}
+
+.aut span{
+	display:block;
+	margin:5px;
+	font-size:13px;
+	color:#676767;
+}
+
+.tim{
+	width:200px;
+	height:20px;
+	margin-top:15px;
+	margin-left:120px;
+	float:left;
+	border:0px solid blue;
+}
+
+.tim span{
+	display:block;
+	margin:5px;
+	font-size:13px;
+	color:#676767;
+}
+
+/* 内容样式设置 */
+.main_left_content{
+	height:auto;
+	margin:5px;
+	margin-top:10px;
+	overflow:hidden;
+	border-bottom:1px solid #D0E3FF;
+}
+
+.main_left_content p{
+	display:block;
+	height:auto;
+	font-size:14px;
+	padding:10px;
+	color:#999999;
+	line-height:30px;
+}
+
+/*对评论的样式设置*/
+.main_left_review{
+	width:588px;
+	height:30px;
+	margin-left:5px;
+	border:0px solid red;
+}
+
+.main_left_rev{
+	width:65px;
+	background:url(../images/wycj.jpg) no-repeat 0px -32px;
+	margin-top:2px;
+	margin-left:405px;
+	float:left;
+	border:0px solid blue;
+
+}
+
+.main_left_rev a{
+	display:block;
+	height:25px;
+	font-size:13px;
+	color:#FFF;
+	margin-left:5px;
+	display:block;
+	text-decoration:none;
+	border:0px solid red;
+}
+
+.main_left_lik{
+	width:70px;
+	background:url(../images/wycj.jpg) no-repeat 0px -66px;
+	margin-left:20px;
+	float:left;
+	border:0px solid blue;
+}
+
+.main_left_lik a{
+	text-align:center;
+	height:26px;
+	line-height:26px;
+	display:block;
+	font-size:13px;
+	color:#FFF;
+}
+
+/* 评论的内容的设置（显示评论人、评论时间和评论人头像） */
+.review{
+	width:590px;
+	height:auto;
+	margin-top:20px;
+	margin-left:4px;
+	float:left;
+	border:0px solid red;
+}
+
+.review_box{
+	width:590px;
+	float:left;
+	margin-top:20px;
+	/* border-bottom:1px solid #7F9DB9; */
+}
+
+
+.review_left{
+	width:65px;
+	height:110px;
+	float:left;
+	border:0px solid blue;
+}
+
+
+.review_left img{
+	width:60px;
+	height:60px;
+	margin-top:2px;
+	margin-left:2px;
+	float:left;
+	border:0px solid red;
+}
+
+.review_right{
+	width:500px;
+	height:auto;
+	margin-top:2px;
+	margin-left:20px;
+	float:left;
+	/* border-bottom:1px solid #D0E3FF; */
+	border:0px solid red;
+	
+}
+.review_right_hid{
+	width:500px;
+	float:left;
+	background-color:#F2FBF2;
+	border:0px solid black;
+}
+
+.review_right_hid span{
+	display:block;
+	width:auto;
+	height:20px;
+	font-size:13px;
+	font-weight:normal;
+	overflow:hidden;
+	color:#676767;
+	float:left;
+	border:0px solid red;
+}
+
+.review_right_hid b{
+	display:block;
+	width:auto;
+	height:20px;
+	font-size:13px;
+	font-weight:normal;
+	overflow:hidden;
+	margin-left:10px;
+	color:#676767;
+	float:left;
+	border:0px solid red;
+}
+
+.review_right_hid i{
+	display:block;
+	width:180px;
+	height:20px;
+	float:left;
+	margin-left:10px;
+	font-size:13px;
+	font-style:normal;
+	color:#676767;
+	border:0px solid red;
+}
+
+.review_right_hid a{
+	display:block;
+	text-decoration:none;
+	margin-left:0px;
+	font-size:12px;
+	color:#3377AA;
+	float:left;
+	cursor:pointer;
+}
+
+.review_right_cid span{
+	display:block;
+	width:500px;
+	margin-top:25px;
+	font-size:12px;
+	line-height:21px;
+	color:#aaa;
+	background-color:#F9F9F9;
+	overflow:hidden;
+	border:0px solid red;
+}
+
+/* 回复显示样式设置 */
+.review_reply{
+	width:495px;
+	margin-top:20px;
+	border:0px solid red;
+
+}
+
+/* 回复内容显示样式设置 */
+.review_reply_top{
+	width:485px;
+	height:auto;
+	margin:5px;
+	border:0px solid blue;
+
+}
+
+/* .review_reply_top_pic{
+	width:40px;
+	height:40px;
+	margin-top:2px;
+	float:left;
+	border:0px solid red;
+}
+
+.review_reply_top_pic img{
+	width:40px;
+	height:40px;
+	border:0px solid blue;
+
+} */
+
+.review_reply_top_name{
+	width:420px;
+	height:20px;
+	margin-top:2px;
+	margin-left:20px;
+	float:left;
+	border-bottom:1px dashed #D0E3FF;
+	/*border:0px solid red;*/
+}
+
+.review_reply_top_name span{
+	display:block;
+	width:auto;
+	height:20px;
+	font-size:13px;
+	font-weight:normal;
+	overflow:hidden;
+	color:#676767;
+	float:left;
+	border:0px solid red;
+}
+
+.review_reply_top_name b{
+	display:block;
+	width:auto;
+	height:20px;
+	font-size:13px;
+	font-weight:normal;
+	overflow:hidden;
+	color:#676767;
+	float:left;
+	margin-left:10px;
+	border:0px solid red;
+}
+
+.review_reply_top_name a{
+	display:block;
+	width:auto;
+	height:20px;
+	font-size:13px;
+	font-weight:normal;
+	overflow:hidden;
+	color:#D88177;
+	float:left;
+	margin-left:10px;
+	cursor:pointer;
+	border:0px solid red;
+
+}
+
+.review_reply_top_con{
+	width:420px;
+	border:40px;
+	float:left;
+	margin-top:2px;
+	margin-left:20px;
+	border-bottom:1px solid #FBF2FB;
+}
+
+.review_reply_top_con span{
+	display:block;
+	font-size:12px;
+	line-height:21px;
+	color:#aaa;
+	background-color:#F9F9F9;
+	overflow:hidden;
+	border:0px solid red;
+}
+
+/* .review_reply_de{
+	height:15px;
+	margin-top:2px;
+	margin-left:370px;
+	margin-bottom:2px;
+	border:0px solid red;
+}
+
+.review_reply_de a{
+	font-size:12px;
+	color:red;
+} */
+
+
+/* 回复分页显示样式设置 */
+.review_reply_top_page{
+	width:485px;
+	height:20px;
+	margin:5px;
+	border:0px solid blue;
+}
+
+.review_reply_top_page span{
+	display:block;
+	font-size:12px;
+	color:#3377AA;
+	background-color:#F9F9F9;
+	overflow:hidden;
+	margin-left:260px;
+	border:0px solid red;
+}
+
+
+.fid1{
+	width:495px;
+	border:0px solid red;
+}
+
+.fid1 a{
+	display:block;
+	text-decoration:none;
+	margin-top:5px;
+	margin-left:0px;
+	font-size:12px;
+	color:#3377AA;
+	float:left;
+	cursor:pointer;
+}
+
+.fid2{
+	margin-top:20px;
+	margin-bottom:20px;
+	float:left;
+	width:460px;
+	padding:10px 20px 10px;
+	background-color:#ffc;
+	border:0px solid blue; 
+}
+
+.fid2 textarea{
+	width:370px;
+	height:40px;
+	float:left;
+	border:0px solid red;
+}
+.fid2 input[type="button"]{
+	width:67px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	text-align:center;
+	margin:10px 0 0 20px;
+	border:0px;background:url(../images/wycj.jpg) no-repeat 0px -32px;
+	color:#fff;
+	cursor:pointer;
+}
+
+/* 分页设置 */
+.main_left_list_pag{
+	width:200px;
+	float:left;
+	margin-top:20px;
+	margin-left:378px;
+	color:#37a;
+	border:0px solid red;
+}
+
+
+.main_left_list_pag a{
+	color:#37a;
+}
+
+
+/* 评论表单的设置 */
+#comfor{
+	width:590px;
+	margin-top:100px;
+	margin-left:0px;
+	border:0px solid red;
+}
+
+.comfor_com{
+	width:555px;
+	float:left;
+	border:0px solid red;
+
+}
+
+.comfor_com span{
+	display:block;
+	font-size:18px;
+	margin:5px;
+	float:left;
+	color:#FF0000;
+	float:left;
+	border:0px solid blue;
+}
+
+.comfor_con{
+	margin-left:5px;
+	float:left;
+	border:0px solid red;
+}
+
+.comfor_but input[type="submit"]{
+	width:67px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	text-align:center;
+	margin:10px 0 0 5px;
+	border:0px;background:url(../images/wycj.jpg) no-repeat 0px -32px;
+	color:#fff;
+	cursor:pointer;
+}
+
+.comfor_but input[type="button"]{
+	width:67px;
+	height:25px;
+	float:left;
+	line-height:25px;
+	text-align:center;
+	margin:10px 0 0 5px;
+	border:0px;background:url(../images/wycj.jpg) no-repeat 0px -32px;
+	color:#fff;
+	cursor:pointer;
+}
+
+
+/* 左侧栏目设置结束 */
+
+
+/* 话题详情页右侧栏目设置开始 */
+#main_right{
+	width:300px;
+	height:900px;
+	float:right;
+	margin:5px;
+	border:0px solid black;
+
+}
+
+/* 公告设置（待用） */
+.main_right_top{
+	
+}
+
+.other{
+	display:block;
+	margin-top:10px;
+	margin-left:5px;
+	font-size:14px;
+	color:#007722;
+	border:0px solid red;
+}
+
+/* 对右侧列表显示话题的总体设置 */
+.indent{
+	margin-top:20px;
+	margin-left:5px;
+	padding-left:5px;
+	background-color:#FFFFFF;
+	border:0px solid red;
+}
+
+/* 对单话题的样式设置 */
+.pul{
+	width:290px;
+	height:20px;
+	margin-top:15px;
+	border-bottom:1px dashed #DDDDDD;
+	
+	
+}
+
+.pul a{
+	width:180px;
+	display:block;
+	text-decoration:none;
+	font-size:12px;
+	color:#3377AA;
+	float:left;
+	overflow:hidden;
+}
+
+.pul span{
+	font-size:12px;
+	color:#666666;
+	float:left;
+}
+
+
+/* 对分页进行设置 */
+/* .main_right_list_pag{
+	width:220px;
+	float:left;
+	margin-top:20px;
+	margin-left:60px;
+	color:#37a;
+	border:1px solid red;
+}
+
+
+.main_right_list_pag a{
+	color:#37a;
+} */
+
+/* 右侧栏目设置结束 */
+
+/* 清除浮动 */
+.main_bottom{
+	width:100%;
+	display:block;
+	clear:both;
+}
+

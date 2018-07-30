@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>武夷山驴友交流网--邮箱修改页</title>
+	<script src="__PUBLIC__/Home/js/editemail.js"></script>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/public.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/index.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/register.css"/>
+	<style>
+		#header{
+			color: #666;
+			margin-top:20px;
+			background:#fff;
+			padding:20px 0px;
+		}
+		#header h1{
+			padding:0px 40px 0px 30px;
+			margin-top: 30px;
+			margin-bottom: 40px;
+			font-size: 24px;
+		}
+		#header form{
+			margin-bottom: 60px;
+		}
+	</style>
+</head>
+<body>
+	{include file="Public/header.html"}
+	<br/><br/>
+	<center>
+		<div id="header" class="w960">
+		<h1>邮箱修改页</h1>
+		<form action="__APP__/Users/updateEmail" name="myform" method="post" onsubmit="return dosubmit()">
+			<table>
+				<tr>
+					<td align="right">新邮箱：</td>
+					<td><input type="text" name="email" value="{$smarty.session.user.email}"/>&nbsp;&nbsp;<span>如:guoguo@126.com</span></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td align="center"  colspan="2"><span class="bn-flat"><input  type="submit" value="更新邮箱" tabindex="8"></span></td>
+				</tr>
+			</table>
+			<div id="cw"></div>
+		</form>
+
+		</div>
+	</center>	
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<!--底部信息-->
+    {include file="Public/footer.html"}
+</body>
+</html>

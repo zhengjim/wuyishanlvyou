@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>武夷山驴友交流网--武夷山话题列表页</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="StyleSheet" href="__PUBLIC__/Home/css/grouplist.css" type="text/css"/>
+		<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+		<script src="__PUBLIC__/Home/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+			function login(){
+				//获取当前浏览器的尺寸；
+				var width=$(document).outerWidth();
+				var height=$(document).outerHeight();
+				$("#allfill").width(width).height(height).show();
+				$("#dologin").show();
+			}
+
+            //执行登录
+            function doLogin(){
+                var username=$("#username").val();
+                var pass=$("#password").val();
+                var usercode=$("#usercode").val();
+                $("#hint").text("");
+                $.ajax({
+                    type: "POST",
+                    url: "__APP__/Users/doLogins",
+                    data: { email:username,pass:pass,usercode:usercode},
+                    success: function(res){
+                        if(res=="ok"){
+                            window.location.reload();
+                        }
+                        if(res=="error"){
+                            $("#hint").text("账号或密码错误!");
+                        }
+                        if(res=="close"){
+                            $("#hint").text("你的账号已被查封!");
+                        }
+                        if(res=="verfail"){
+                            $("#hint").text("验证码错误!");
+                        }
+                    }
+                });
+            }
+
+		</script>
+	</head>
+	<body>
+		<!----------导入页头---------->
+		{include file="Public/header.html"}
+		<!-- 登录弹窗开始 -->
+		<div id="allfill"></div>
+		<div id="dologin">
+			<div id="dologin1">
+				<div id="dologin2">登录
+					<div id="dologin3"></div>
+				</div>
+				<table width="276" height="200" border="0">
+					<tr>
+						<td class="td1">账号:</td>
+						<td><input type="text" name="email" id="username" placeholder="输入账号" class="td2"/></td>
+					</tr>
+					<tr>
+						<td class="td1">密码:</td>
+						<td><input type="password" name="pass" id="password" placeholder="输入密码" class="td2"/></td>
+					</tr>
+					<tr>
+						<td class="td1">验证码:</td>
+						<td><input type="text" name="usercode" id="usercode" size="6" placeholder="输入验证码" class="td2" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><img src='__APP__/Users/verify/' height="25" onclick="this.src='__APP__/Users/verify/?id='+Math.random"/></td>
+					</tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" value="登录" id="login" onclick="doLogin()"/>&nbsp;&nbsp;
+							<input type="button" onclick="$('#allfill,#dologin').hide();" value="关闭"/>
+						</td>
+					</tr>
+				</table>
+				<div id="hint" style="padding-top:40px;"></div>
+			</div>
+		</div>
+		<!-- 登录弹窗结束 -->
+		<!---------主体内容开始---------->
+		<div id="main">
+			<!----------列表武夷山话题名开始---------->
+				<div id="main_top">
+					<div class="main_top_c">
+							<span>{$group_name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+							<i>共有<span>{$total}</span>篇帖子</i>
+					</div>
+					
+					<div class="main_top_addgroup">
+						{if {$state == 1}}
+						<a  href="__APP__/MyGroup/quit/gid/{$smarty.get.gid}">退出该话题</a>
+						{else}
+						<a style="font-size: 16px;" href="__APP__/GroupPost/insert/gid/{$smarty.get.gid}">+加入该话题</a>
+						{/if}
+					</div>
+				</div>
+				
+			<!---------列表武夷山话题名结束----------->
+			<!----------主体左边列表栏开始---------->
+			<div id="main_left">
+				<div class="main_left_intro">
+					<div class="main_left_intro_img">
+						<img src="__PUBLIC__/uploads/groups/m_{$group_pic}"/>
+						<div class="main_left_headman">
+							<span>创建人：{$name}</span>
+						</div>	
+					</div>
+					<div class="main_left_intro_char">
+						{if !empty($group_intro)}
+						<span><b>该武夷山话题简介：</b>{$group_intro}</span>
+						{else}
+						<span><b>该武夷山话题简介：</b>{$group_intro}组长很懒，什么也没写!</span>
+						{/if}
+					</div>
+				</div>
+				{foreach $gplist as $k=>$vo}
+				<!---------列表内容---------->
+				<div class="main_left_c">
+					<!----------喜欢人数---------->
+					<div class="main_left_c_l">
+						<span style="text-align:center;display:block">{$vo.like_num}<br/>喜欢</span>
+					</div>
+					<!----------列表内容显示---------->
+					<div class="main_left_c_r">
+						<a href="__APP__/GroupDetails/index/group_post_id/{$vo.group_post_id}/gid/{$vo.gid}">{$vo.post_title}</a><br/><br/>
+						<ul>
+							{if !empty($vo.photo)}
+							<li><img src="__PUBLIC__/uploads/header/m_{$vo.photo}"/></li>
+							{else}
+							<li><img src="__PUBLIC__/uploads/header/duface.png"/></li>
+							{/if}
+							<li><p><a href="__APP__/GroupDetails/index/group_post_id/{$vo.group_post_id}/gid/{$vo.gid}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$vo.descripition|truncate:60:"..."}</a></p></li><br/><br/><br/>
+						</ul>
+							<span>{$vo.name} &nbsp;&nbsp;&nbsp;&nbsp;<i>{$vo.addtime|date_format:"%Y-%m-%d %H:%M:%S"}&nbsp;&nbsp;&nbsp;&nbsp;发布</i></span>
+					</div>
+				</div>
+				{/foreach}
+				<div class="main_left_c_page">{$pageinfo}</div>
+			</div>
+			<!----------主体左列表栏结束---------->
+			<!----------主体右列表栏开始---------->
+			<div id="main_right">
+				<div class="main_right_top">
+					<div class="main_right_top_fabu">
+						<div class="main_right_top_fabu1">
+							{if $smarty.session.user}
+							<a href="__APP__/AddGroupPost/agpinsert/gid/{$smarty.get.gid}">发布帖子</a>
+							{else}
+							<a href="javascript:void(0)" onclick="login()">发布帖子</a>
+							{/if}
+						</div>
+					</div>
+					<div class="main_right_top_add">值得加入的话题</div>
+				<!--	<div class="main_right_top_exchange"><a id="changegroup">换一批</a></div> -->
+					<div class="main_right_top_eliminate"></div>
+				</div>
+				<!--在此循环输出武夷山话题-->
+				<div class="main_right_content">
+				{foreach $grlist as $k=>$vo}
+					<div class="main_right_content_n">
+						<div class="main_right_content_n1_img">	
+							<a href="__APP__/GroupPost/index/gid/{$k}"><img src="__PUBLIC__/uploads/groups/s_{$vo.group_pic}"/></a>
+						</div>	
+						<div class="main_right_content_n2">
+							<b><a href="__APP__/GroupPost/index/gid/{$k}">{$vo.group_name}</a></b>
+							<i>{$vo.grouper_num}个成员</i>&nbsp;&nbsp;
+							{if $smarty.session.user}
+							<span><a href="__APP__/GroupPost/insert/gid/{$k}">+加入该武夷山话题</a></span>
+							{else}
+							<span><a href="javascript:void(0)" onclick="login()">+加入该武夷山话题</a></span>
+							{/if}
+						</div>
+					</div>
+					{/foreach}	
+				</div>
+				<!----------Ajax请求刷新武夷山话题----------->
+				<script type="text/javascript">
+					$(function(){
+						$("#changegroup").click(function(){
+							$.ajax({
+								url:"__APP__/MyGroup/showgroup",	//请求地址
+								dataType:'json',
+								success:function(grouplist){
+									var i;
+									var str = "";
+									for(i in grouplist){
+										str +='<div class="main_right_content_n"><div class="main_right_content_n1_img"><a href="__APP__/GroupPost/index/gid/'+i+'"><img src="__PUBLIC__/uploads/groups/s_'+grouplist[i].group_pic+'"/></a></div><div class="main_right_content_n2"><b><a href="__APP__/GroupPost/index/gid/{$k}">'+grouplist[i].group_name+'</a></b><i>'+grouplist[i]['grouper_num']+'个成员</i>&nbsp;&nbsp;&nbsp;<span><a href="__APP__/GroupPost/insert/gid/'+[i]+'">+加入该武夷山话题</a></span></div></div>';
+									}
+									$(".main_right_content").html(str);
+								}
+							});
+						});
+					});
+				</script>
+				<!----------右边公告位置开始---------->
+				<div class="main_right_notice">
+					
+				</div>
+				<!----------右边公告位置结束---------->
+				<!----------右边广告位置开始---------->
+				<div class="main_right_ad">
+				</div>
+				<!----------右边广告位置结束---------->
+			</div>
+			<!----------主体右列表栏结束---------->
+			<!----------清除浮动---------->
+			<div class="main_bottom">
+			
+			</div>
+		</div>
+		<!---------主体内容结束---------->
+		<!----------导入页脚---------->
+		{include file="Public/footer.html"}
+	</body>	
+</html>

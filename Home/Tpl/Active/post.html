@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>武夷山驴友交流网--邀请讨论</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">	
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/active.css" type="text/css"/>
+	<script src="__PUBLIC__/Home/js/jquery-1.7.2.min.js"></script>
+	<!--邀请讨论回复的js-->
+	<script>
+		function toReply(){
+			//登录验证
+			var uid = $("#uid").val();
+			if(uid == ""){
+				alert('请先登录！');
+				window.location = "__APP__/Users/login";
+				return;
+			}
+
+			//内容是否为空验证
+			var content = $("#r-con").val();
+			if(content.length < 1){
+				alert('回复内容不能为空！');
+				return;
+			}
+
+			//封装内容向PHP发送请求
+			var pid = $("#pid").val();
+			var ornum = $("#ornum").val();
+			var replyed_id = $("#replyed_id").val();
+			$.ajax({
+				type: "POST",
+				url: "__APP__/Active/toReply/",
+				dataType: "json",
+				data:{ uid:uid,pid:pid,content:content,ornum:ornum},
+				success: function(newr){
+					var li = "<li><div class='pic'><img src='__PUBLIC__/uploads/header/s_"+newr.photo+"'/></div><div class='comments-c'><div class='author'><span>"+newr.rtime+"</span><a href='"+newr.uid+"'>{$v.name}</a><div class='again_reply' name='"+newr.uname+"' replyed_id='"+newr.uid+"'>回复</div></div><p>"+newr.content+"</p></div><div class='clear'></div></li>";
+					$("#comments").prepend(li);
+					$("#ornum").val(newr.nrnum);
+					$("#r-con").val("");
+				}
+			});
+		}
+
+		$(function(){
+			$(".again_reply").live('click',function(){
+				$("#replyed_id").val($(this).attr('replyed_id'));
+				var name = $(this).attr('name');
+				$("#r-con").val("@"+name);
+			});
+		});
+	</script>
+</head>
+<body>
+	{include file="Public/header.html"}
+
+	<!--这是主体部分-->
+	<div class="w960 active" id="active-p-view">
+		<div class="left-box">
+			<div id="info-box">
+				<h1>{$info.title}</h1>
+				<div id="info">
+					<div class="pic"><a href="javascript:"><img src="__PUBLIC__/uploads/header/s_{$info.photo}"/></a></div>
+					<div class="info-r">
+						<li class="title"><span>{$info.addtime|date_format:"%Y-%m-%d %T"}</span><i>　　来自: <a href="javascript:">{$info.uname}</a></i></li>
+						{if $imglist[0]['filename']}
+						<div class="details-img">
+							{foreach $imglist as $im}
+								<a href=""><img src="__PUBLIC__/uploads/active/p_s_{$im.filename}"/></a>
+							{/foreach}
+						</div>
+						{/if}
+						<p>{$content}
+						</p>
+						<div id="comments">
+							{foreach $rlist as $v}
+							<li>
+								<div class="pic"><img src="__PUBLIC__/uploads/header/s_{$v.photo}"/></div>
+								<div class="comments-c">
+									<div class="author">
+										<span>{$v.rtime|date_format:"%Y-%m-%d  %T"}</span>
+							            <a href="{$v.uid}">{$v.uname}</a>
+							            <div class="again_reply" name="{$v.uname}" replyed_id="{$v.uid}">回复</div>
+							        </div>
+							        <p>{$v.content}</p>
+								</div>
+								<div class="clear"></div>
+							</li>
+							{/foreach}
+							<div class="pagelist">{$page}</div>
+		
+							<div class="to-reply">
+								<div id="ht"><a href="">我来回应</a></div>
+								<div id="toReply">
+									<input type="hidden" value="{$smarty.session.user.uid}" id="uid"/>
+									<input type="hidden" value="{$smarty.get.pid}" id="pid"/>
+									<!--ornum为当前的帖子的回复数量-->
+									<input type="hidden" value="{$info.reply_num}" id="ornum"/>
+									<input type="hidden" value="0" id="replyed_id"/>
+									<textarea id="r-con" cols="20" rows="5" resize="noresize"></textarea>
+									<input type="button" onclick="toReply()" value="提交"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right-box">
+			<div class="ct"><p class="pl2">&gt; <a href="__URL__/view/aid/{$ainfo.active_id}">去&lt;&lt;{$ainfo.active_name}&gt;&gt;邀约看看</a></p></div>
+			<div class="others">
+				<ul>
+					{foreach $plist as $po}
+					<li><a title="{$po.title}" href="__URL__/post/pid/{$po.pid}">{$po.title}</a><span class="pl">({$po.uname})</span></li>
+					{/foreach}
+				</ul>
+			</div>
+		</div>
+		<div class="clear">
+		</div>
+	</div>
+	<!--主体部分结束-->
+
+	{include file="Public/footer.html"}
+	
+</body>
+</html>

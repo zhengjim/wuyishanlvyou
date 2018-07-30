@@ -1,0 +1,28 @@
+<!--公告信息的修改页-->
+<div class="pageContent">
+	<form method="post" action="__URL__/updateinfo/navTabId/noticelist/callbackType/closeCurrent" class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<input type="hidden" name="nid" value="{$vo.nid}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>公告标题：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="title" value="{$vo.title}"/></dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>内容:</dt>
+				<dt><textarea name="content" class="required" cols="60" rows="4">{$vo.content}</textarea></dt>
+			</dl>
+			<dl>
+				<dt>状态修改：</dt>
+				<dd><input type="radio" name="state" value="0" {if $vo.state==0}checked{/if}/>待发布
+					<input type="radio" name="state" value="1" {if $vo.state==1}checked{/if}/>发布</dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

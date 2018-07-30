@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>武夷山驴友交流网--个人首页</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">	
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/usercenter.css" type="text/css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/active.css"/>
+	<link rel="StyleSheet" href="/WEB/WEB/Public/Home/css/mystyle.css" type="text/css">
+</head>
+<body>
+	{include file="Public/header.html"}
+
+	<!--这是主体部分-->
+	<div class="w960" id="ucenter">
+		<div class="c-left">
+		{include file="Public/top.html"}
+			<div id="title" ><a href="__APP__/Users/myShow" >我的邀约动态</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="__APP__/Users/myGroup" style="color:#37a;font-weight: bold;">我的话题动态</a></div>
+			{if !empty($list)}
+			{foreach $list as $v}
+			<div class="c-con">
+				<ul>
+					<li>
+						<div class="img">
+							{if !empty($v.photo)}
+							<img src="__PUBLIC__/uploads/header/s_{$v.photo}"> 
+						{else}
+							<img src="__PUBLIC__/uploads/header/none-img2.png"> 
+						{/if}
+						</div>
+						<div class="c-con-right">
+							
+							<!--健康知识ID：{$v.active_id}<br/>-->
+							<i>来自{$v.name} 的帖子：</i>
+
+							<p>
+								<b style="font-size:15px;color:#000">话题名称：{$v.group_name}<br/></b>
+								<b><a href="__APP__/GroupDetails/index/group_post_id/{$v.group_post_id}" target="">{$v.post_title}</a></b> 
+								<!--{$v.content}-->
+							</p>
+							<span>发布时间:{$m}</span>
+						</div> 
+					</li>
+				</ul>
+			</div>
+			{/foreach}
+			{else}
+				<div class="none">赶紧加入你喜欢的武夷山话题吧！总有你喜欢的</div>
+			{/if}
+			<div class="pagelist">
+				<div class="paginator">
+					{$page}
+				</div>
+			</div> 
+		</div>
+		<div class="c-right">
+			<div id="news">
+				<b>了解我们的武夷山~</b>
+				<ul>
+					<li><a href="http://www.wuyiu.edu.cn/" target="" title="">武夷学院</a></li>
+					<li><a href="http://www.wys.gov.cn/" target="" title="">武夷山政府</a></li>
+				</ul>
+			</div>
+			<div class="right-ad01">
+				<img src="__PUBLIC__/Home/images/ad01.png" /> 
+			</div> 
+		</div>
+		<div class="clear"></div> 
+	</div> 
+	<!--主体部分结束-->
+
+	{include file="Public/footer.html"}
+</body>
+</html>

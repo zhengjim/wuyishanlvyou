@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'did', 1 => 'title', 2 => 'addtime', 3 => 'uid', 4 => 'last_edit_time', 5 => 'like_num', 6 => 'click_num', 7 => 'picture', 8 => 'keywords', 9 => 'description', 10 => 'type', 11 => 'state', '_autoinc' => true, '_pk' => 'did', ); ?>

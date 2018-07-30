@@ -1,0 +1,189 @@
+/*设置页面初始样式*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{ margin:0; padding:0; list-style:none;}/*css 重置*/
+body{ font:normal 12px/1.5"宋体","楷体","黑体",Verdana, Geneva, sans-serif; color:#000;}
+img { border:0px; }
+
+/* 创建小组主体的设置 */
+#main{
+	margin-left:auto;
+	margin-right:auto;
+	width:960px;
+	border:0px solid red;
+}
+
+/* 主体顶部 */
+#main_top{
+	width:950px;
+	height:50px;
+	margin:5px;
+	border:0px solid blue;
+}
+
+.main_top_content{
+	width:940px;
+	height:40px;
+	margin:5px;
+	border:0px solid red;
+}
+
+.main_top_content h1{
+	color:#E48375;
+}
+
+/* 主体左侧栏目设置开始 */
+#main_left{
+	margin:5px;
+	float:left;
+	border:0px solid blue;
+}
+
+#c-nav{
+	display:block;
+	margin:20px 50px;
+}
+#c-nav ul{
+	display:block;
+	clear:both;
+	height:30px;
+	line-height:30px;
+}
+#c-nav li{
+	float:left;
+	width:65px;
+	text-align:center;
+}
+#c-nav li a{
+	font-size:14px;
+	color:#d98175;
+}
+
+#add{
+	display:block;
+	padding:20px 15px;
+	background:#FFFCFC;
+	margin-bottom: 20px;
+}
+#add ul{
+	display:block;
+	height:50px;
+}
+#add ul li{
+	float:left;
+	width:105px;
+	text-align:center;
+	font-size:14px;
+}
+#add ul li span{
+	display: block;
+	text-align:center;
+	height:35px;
+}
+#add ul li i{
+	font-style: normal;
+	text-align: center;
+}
+#add ul li a{
+	color:#8F8F8F;
+}
+
+
+.main_left_present{
+	width:500px;
+	margin-top:0px;
+	padding-left:50px;
+	line-height:40px;
+	font-size:15px;
+	background-color:#FFFFFF;
+	border:0px solid red;
+}
+
+.main_left_headpic{
+	width:150px;
+	height:150px;
+	margin-top:20px;
+	margin-left:80px;
+	border:0px solid red;
+
+}
+
+.textarea{
+	width:500px;
+	margin-top:5px;
+	border:0px solid blue;
+}
+
+.textarea span{
+	display:block;
+	width:80px;
+	margin-top:-10px;
+	float:left;
+	border:0px solid red;
+}
+
+.main_left_present span{
+	color:#666666;
+	
+
+}
+
+.main_left_headpic img{
+	width:150px;
+	height:150px;
+	margin-left:100px;
+	border:0px solid red;
+}
+
+
+.main_left_present_bu{
+	width:120px;
+	height:40px;
+	margin-top:0px;
+	margin-left:195px;
+	border:0px solid red;
+}
+
+
+/* 主体左侧栏目设置结束 */
+
+/* 主体右侧栏目设置开始 */
+#main_right{
+	width:300px;
+	float:right;
+	margin-top:5px;
+	margin-right:5px;
+	border:0px solid black;
+}
+
+/* 公告属性设置 */
+.main_right_notice{
+
+
+
+}
+
+/* 广告位置属性设置 */
+.main_right_ad{
+	width:300px;
+	height:208px;
+	float:right;
+	overflow:hidden;
+	border:0px solid red;
+}
+
+/* 设置广告图片的大小 */
+.main_right_ad img{
+	
+}
+
+
+
+/* 主体左侧栏目设置结束 */
+
+
+
+
+
+
+
+
+

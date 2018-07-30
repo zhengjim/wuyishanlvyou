@@ -1,0 +1,89 @@
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote {
+margin: 0;
+padding: 0;
+}
+.w960{
+	width:960px;
+	display:block;
+	clear:both;
+	margin-left:auto;
+	margin-right:auto;
+	}
+#content {
+	background: #fff;
+	min-height: 420px;
+}
+
+h1 {
+word-wrap: break-word;
+display: block;
+font-size: 25px;
+font-weight: bold;
+color: #494949;
+margin: 0;
+padding: 0 0 15px 0;
+line-height: 1.1;
+}
+.grid-16-8 .article {
+float: left;
+width: 590px;
+padding-right: 40px;
+}
+.xbar {
+background: url(../images/zbar.gif) no-repeat;
+width: 100%;
+margin-bottom: 21px;
+overflow: hidden;
+}
+.xbar div {
+float: left;
+background: url(../images/zbar.gif) no-repeat right top;
+margin-left: 5px;
+padding-right: 35px;
+width: 100%\9;
+}
+element.style {
+clear: both;
+}
+table {
+border-collapse: collapse;
+border: 0;
+padding: 0;
+margin: 0;
+}
+tbody {
+display: table-row-group;
+vertical-align: middle;
+border-color: inherit;
+}
+tr {
+display: table-row;
+vertical-align: inherit;
+border-color: inherit;
+}
+.m {
+font-size: 14px;
+line-height: 120%;
+color: #006600;
+}
+body, td, th {
+font: 12px Helvetica,Arial,sans-serif;
+line-height: 1.62;
+}
+td[Attributes Style] {
+vertical-align: top;
+}
+a:hover {
+color: #fff;
+text-decoration: none;
+background: #37a;
+}
+.gact {
+color: #BBBBBB;
+font-size: 12px;
+text-align: center;
+cursor: pointer;
+}
+.fright {
+float: right;
+}

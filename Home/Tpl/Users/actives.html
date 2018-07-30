@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>健康知识讨论帖浏览页</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">	
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/usercenter.css" type="text/css"/>
+</head>
+<body>
+	{include file="Public/header.html"}
+
+	<!--这是主体部分-->
+	{include file="Public/top.html"}
+			{foreach $list as $v}
+			<div class="c-con">
+				<ul>
+					<li>
+						<div class="img">
+							<img src="__PUBLIC__/uploads/header/s_{$v.photo}"> 
+						</div>
+						<div class="c-con-right">
+							<i>{$v.name} 的评论：</i>
+							<p>
+								<b><a href="" target="">{$v.title}</a></b> 
+								{$v.reply_content}
+							</p>
+							<span>31分钟前来自<a href="" target="">我爱吃粤菜饮食话题</a></span>
+						</div> 
+					</li>
+				</ul>
+			</div>
+			{/foreach}
+		</div>
+		<div class="c-right">
+			<div id="news">
+				<b>试试更多有趣的内容</b>
+				<ul>
+					<li><a href="" target="" title="">双十一，来晒你的战利品！</a></li>
+					<li><a href="" target="" title="">大家来讲相亲的故事。</a></li>
+				</ul>
+			</div>
+			<div class="right-ad01">
+				<img src="__PUBLIC__/Home/images/ad01.png" /> 
+			</div> 
+		</div>
+		<div class="clear"></div> 
+	</div> 
+	<!--主体部分结束-->
+
+	{include file="Public/footer.html"}
+</body>
+</html>

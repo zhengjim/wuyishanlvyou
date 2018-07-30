@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>武夷山驴友交流网--头像上传页</title>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/public.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/Home/css/headupload.css"/>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.7.2.min.js"></script>
+	<style>
+		#headupload{
+			color: #666;
+			margin-top:20px;
+			background:#fff;
+			padding:20px 0px;
+		}
+		#headupload h1{
+			padding:0px 40px 0px 30px;
+			font-size: 24px;
+		}
+		#header{
+			padding-left: 50px;
+			margin-top: 30px;
+		}
+	</style>
+</head>
+<body>
+	{include file="Public/header.html"}
+	<div id="headupload" class="w960">
+		<div class="clear"></div>
+		<h1>头像上传</h1>
+		<div id="header">
+			<form action="__APP__/Users/doUpload" method="post" enctype="multipart/form-data">
+				文件：<input type="file" name="pic"/><br/><br/>
+				<input type="submit" value="提交"/>
+			</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!--底部信息-->
+    {include file="Public/footer.html"}
+</body>
+</html>

@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'uid', 1 => 'name', 2 => 'pass', 3 => 'sex', 4 => 'age', 5 => 'phone', 6 => 'email', 7 => 'score', 8 => 'photo', 9 => 'level', 10 => 'city', 11 => 'address', 12 => 'state', 13 => 'addtime', 14 => 'ip', '_autoinc' => true, '_pk' => 'uid', ); ?>

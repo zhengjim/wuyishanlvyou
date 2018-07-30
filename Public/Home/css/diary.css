@@ -1,0 +1,124 @@
+/* 日记首页开始 */
+#diary_top {width:960px;height:50px;margin-top:20px;}
+#diary_top span {line-height:50px;font-size:18px;color:#d88177;padding-left:20px;}
+#d_left {background-color:#f8f1e8;}
+#d_left .top { width:100%;height:25px;padding:10px 0 0 100px;}
+#d_left .top a {float:left;display:block;line-height:25px;color:#d88177;padding-right:20px;}
+#d_left .top .cur {font-weight:bold;color:#9cc;}
+#d_left ul li {float:left;}
+#d_left ul li .div1 { float:left;width:70px;text-align:center;padding:8px 10px;}
+#d_left ul li .div1 a {display:block;padding-top:10px;color:#d88177;}
+#d_left ul li .div2 { float:left;width:530px;}
+#d_left ul li .div2 .diva {width:530px;height:60px;background:url(../images/rjbj.jpg) no-repeat;}
+#d_left ul li .div2 .diva a {float:left;margin:30px 0 0 30px;width:320px;font-size:16px;color:#d88177;}
+#d_left ul li .div2 .diva span {float:right;margin:30px 50px 0 0;font-size:12px;color:#666;}
+#d_left ul li .div2 .divb {width:460px;padding:10px 40px 20px 30px;background:url(../images/rjbj1.jpg) repeat-y;}
+#d_left ul li .div2 .divb span {display:block;line-height:20px;margin-top:20px;font-size:14px;color:#666;}
+#d_left ul li .div2 .divc {width:530px;height:35px;background:url(../images/rjbj.jpg) no-repeat 0px -68px;}
+#d_left ul li .div2 .divc .a1 {cursor:pointer;float:left;display:block;width:42px;height:25px;line-height:25px;padding-left:25px;margin-left:260px;background:url(../images/wycj.jpg) no-repeat 0px -67px;color:#fff;}
+#d_left ul li .div2 .divc .a2 {float:left;display:block;width:67px;height:25px;line-height:25px;text-align:center;margin-left:60px;background:url(../images/wycj.jpg) no-repeat 0px -32px;color:#fff;}
+#d_left ul li .div2 .divd {display:none;width:530px;height:100px;background:url(../images/rjbj.jpg) no-repeat 0px -179px;}
+#d_left ul li .div2 .divd span {display:block;width:490px;padding:40px 0 0 40px;}
+#d_left ul li .div2 .divd textarea {display:block;width:350px;height:32px;border:1px solid #ccc;}
+#d_left ul li .div2 .divd input[type='submit'] {display:block;width:70px;height:32px;color:#fff;margin:-34px 0 0 360px;background:url(../images/wycj.jpg) no-repeat 0px -103px;border:0px;cursor: pointer;}
+#d_left ul li .div2 .dive {width:530px;height:55px;background:url(../images/rjbj.jpg) no-repeat 0px -98px;}
+#d_left .div3 { float:left;width:530px;height:12px;margin-left:90px;background:url(../images/rjbj.jpg) no-repeat 0px -154px;}
+#d_left .div3 a {display:block;width:100px;margin:auto;color:#d88177;}
+#d_right {background-color:#f8f1e8;}
+#d_right .top {width:100%;height:35px;}
+#d_right #record {display:block;width:164px;height:48px;line-height:48px;padding-left:100px;color:#fff;font-size:14px;background:url(../images/record.jpg) no-repeat -15px 0px;}
+#d_right .record_list {width:264px;margin-top:30px;}
+#d_right .record_list .title {color:#333;font-size:16px;}
+#d_right .record_list ul li {padding:15px 0;border-bottom:1px solid #ccc;}
+#d_right .record_list ul li .img {display:block;width:70px;height:70px;float:left;}
+#d_right .record_list ul li div {width:175px;height:60px;padding:5px;margin-left:80px;}
+#d_right .record_list ul li div .a1 {color:#037987;font-size:14px;}
+#d_right .record_list ul li div .a2 {color:#037987;font-size:12px;}
+#d_right .record_list ul li div .a3 {display:block;width:67px;height:25px;line-height:25px;text-align:center;background:url(../images/wycj.jpg) no-repeat 0px -32px;color:#fff;}
+#d_right .record_list ul li div .a4 {display:block;width:67px;height:25px;line-height:25px;text-align:center;background:url(../images/wycj.jpg) no-repeat 0px -144px;color:#fff;}
+#d_right .record_list ul li div .span1 {color:#999;font-size:14px;}
+#d_right .record_list ul li div .span2 {color:#037987;font-size:12px;line-height:25px;}
+/* 日记首页结束 */
+.ad-w960 { width:960px; height:90px;margin:20px auto;}
+/* 日记添加页开始 */
+#diary_record { width:720px;margin:0px auto;}
+#diary_record #title { display:block;width:100%;height:120px;line-height:120px;text-align:center;font-size:26px;font-weight:bold;color:#333;}
+#diary_record #record_content { width:640;padding:70px 40px;background-color:#f8f8e7;}
+#diary_record #record_content #record_add { width:640px;border-bottom:1px solid #ddd;}
+#diary_record #record_content #record_add span { display:block;width:640px;height:48px;line-height:48px;margin-bottom:15px;color:#999;}
+#diary_record #record_content #record_add span input[type='file'] { width:120px;height:48px;background:url(../images/add_publich.jpg);color:#fff;font-size:16px;font-weight:bold;border:0px;cursor: pointer;}
+#diary_record #record_content #record_table { width:640px;margin-top:20px;}
+#diary_record #record_content #record_table textarea { width:638px;height:90px;border:1px solid #ccc;}
+#diary_record #record_content #record_table input[type='text'] {width:640px;height:40px;font-size:16px;border:1px solid #ccc;}
+#diary_record #record_publish { dispaly:blcok; width:140px;padding:0px 250px;text-align:center;}
+#diary_record #record_publish input[type='submit'] {width:140px;height:48px;margin-top:20px;border:0px;background:url(../images/add_publich.jpg) no-repeat 0px -100px;color:#fff;font-size:16px;font-weight:bold;cursor: pointer;}
+/* 日记添加页结束 */
+
+/* 日记详情页开始 */
+#diary_detail {background-color:#f8f1e8;}
+#diary_detail .div1 {width:604px;height:20px;margin-top:20px;background:url(../images/ribj2.jpg);}
+#diary_detail .div2 {width:544px;padding:10px 30px;background:url(../images/ribj3.jpg) repeat-y;}
+#diary_detail .div2 span {font-size:18px;font-weight:bold;color:#666;width:544px;display:block;padding-bottom:10px;}
+#diary_detail .div3 {width:604px;height:20px;background:url(../images/ribj2.jpg) no-repeat 0px -30px;}
+#diary_detail .div4 {width:604px;margin-top:20px;}
+#diary_detail .div4 span {display:block;font-size:14px;font-weight:bold;}
+#diary_detail .div4 .photo {float:left;width:50px;height:50px;margin:10px 10px 0 0;text-align:center;}
+#diary_detail .div4 textarea {width:530px;height:86px;margin-top:10px;border:1px solid #ccc;}
+#diary_detail .div4 input[type="submit"] {width:67px;height:25px;line-height:25px;text-align:center;margin:10px 0 0 60px;border:0px;background:url(../images/wycj.jpg) no-repeat 0px -32px;color:#fff;cursor: pointer;}
+#diary_detail .div4 ul li {display:block;float:left;width:604px;padding:20px 0;border-bottom:1px solid #eee;}
+#diary_detail .div4 ul li .photo1 {float:left;width:50px;height:50px;margin-right:10px;text-align:center;}
+#diary_detail .div4 ul li .reply {float:left;width:540px;}
+#diary_detail .div4 ul li .reply a {display:block;float:left;margin-right:10px;color:#d88177;}
+#diary_detail .div4 ul li .reply .time {display:block;float:left;margin-right:10px;color:#999;}
+#diary_detail .div4 ul li .reply .rebotton {display:block;float:left;margin-right:10px;color:#d88177;cursor:pointer;}
+#diary_detail .div4 ul li .reply .content {display:block;float:left;width:520px;padding:10px;color:#666;}
+#diary_detail .div4 ul li .reply .reply_replyed {display:none;float:left;width:480px;padding:10px 20px 0px;background-color:#ffc;}
+#diary_detail .div4 ul li .reply .reply_replyed ul li {display:block;float:left;width:480px;padding:5px 0;border-bottom:1px solid #eee;}
+#diary_detail .div4 ul li .reply .reply_replyed ul li a {display:block;float:left;margin-right:10px;color:#d88177;}
+#diary_detail .div4 ul li .reply .reply_replyed ul li .time {display:block;float:left;margin-right:10px;color:#999;}
+#diary_detail .div4 ul li .reply .reply_replyed ul li .content {display:block;float:left;width:460px;padding:10px;color:#666;font-size:12px;}
+#diary_detail .div4 ul li .reply .reply_replyed textarea {width:370px;height:40px;margin-bottom:10px;float:left;}
+#diary_detail .div4 ul li .reply .reply_replyed input[type="submit"] {width:67px;height:25px;float:left;line-height:25px;text-align:center;margin:20px 0 0 30px;border:0px;background:url(../images/wycj.jpg) no-repeat 0px -32px;color:#fff;cursor: pointer;}
+#diary_user {background-color:#f8f1e8;}
+#diary_user .user {width:264px;height:50px;margin-top:20px;border-bottom:1px solid #ccc;}
+#diary_user .user .photo {display:block;float:left;width:40px;height:40px;}
+#diary_user .user .info {display:block;float:left;width:144px;height:50px;padding-left:10px;}
+#diary_user .user .name {display:block;line-height:25px;color:#d88177;}
+#diary_user .user .diary_num {display:block;float:left;width:70px;height:32px;line-height:32px;text-align:center;margin-top:9px;}
+#diary_user .user .diary_num .num {color:#d88177;font-size:16px;}
+#diary_user .new {width:264px;margin-top:20px;}
+#diary_user .new span {display:block;width:264px;height:50px;line-height:50px;font-size:18px;}
+#diary_user .new ul {display:block;width:264px;border-bottom:1px solid #ccc;}
+#diary_user .new ul li {display:block;width:70px;height:70px;float:left;margin:9px;}
+/* 日记详情页结束 */
+
+.pagelist {
+	margin-top: 60px;
+	font: 14px Arial,Helvetica,sans-serif;
+	color: #aaa;
+	margin: 20px 0;
+	line-height: 150%;
+	text-align: center;
+}
+.pagelist a{
+	color: #37a;
+	padding: 0 4px;
+	margin: 2px;
+}
+.pagelist span{
+	padding: 0 4px;
+	margin: 2px;
+}
+.pagelist .prev {
+	margin-right: 20px;
+}
+.pagelist .current {
+	background: #69c;
+	color: #fff;
+	padding: 0 4px;
+	margin: 2px;
+}
+.pagelist .next {
+	margin-left: 20px;
+}
+

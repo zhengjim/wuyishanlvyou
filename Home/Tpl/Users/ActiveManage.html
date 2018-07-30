@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">	
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/public.css" type="text/css"/>
+	<link rel="StyleSheet" href="__PUBLIC__/Home/css/usercenter.css" type="text/css"/>
+</head>
+<body>
+	{include file="Public/header.html"}
+
+	<!--这是主体部分-->
+	<div class="w960" id="ucenter">
+		{include file="Public/top.html"}
+
+			<!--发起健康知识表单-->
+			<div id="myActive">
+				<ul>
+					{foreach $alist as $v}
+					<li>
+						<a href="__APP__/Active/view/aid/{$v.aid}"  target="_blank"><img src="__PUBLIC__/uploads/active/{$v.photo}" alt=""></a>
+						<div class="content-r">
+							<b><a href="__APP__/Active/view/aid/{$v.aid}"  target="_blank">{$v.name}</a></b>
+							<p class="info">
+								时间：{$v.end_time|date_format:"%Y年 %m月 %d日  %T"}<br/>
+								地点：{$v.address}<br/>
+								发起：{$v.uname}
+							</p>
+							<p class="content-info">
+								{$v.description}
+							</p>
+							<span>
+								<i>{$v.join_num}人参加</i>&nbsp;&nbsp;<a href="__APP__/Active/view/aid/{$v.aid}"  target="_blank">查看详情</a>
+							</span>
+						</div> 
+					</li>
+					{/foreach}							
+				</ul>
+				<div class="pagelist">
+					<div class="paginator">
+						{$page}
+					</div>
+				</div> 
+			</div>
+
+		</div>
+		<div class="c-right">
+			<div id="news">
+				<b>试试更多有趣的内容</b>
+				<ul>
+					<li><a href="" target="" title="">双十一，来晒你的战利品！</a></li>
+					<li><a href="" target="" title="">大家来讲相亲的故事。</a></li>
+				</ul>
+			</div>
+			<div class="right-ad01">
+				<img src="__PUBLIC__/Home/images/ad01.png" /> 
+			</div> 
+		</div>
+		<div class="clear"></div> 
+	</div> 
+	<!--主体部分结束-->
+
+	{include file="Public/footer.html"}
+</body>
+</html>

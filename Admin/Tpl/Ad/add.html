@@ -1,0 +1,36 @@
+<div class="pageContent"><!--广告添加页面-->
+	<form method="post" action="__URL__/addad/navTabId/adslist/callbackType/closeCurrent"  class="pageForm required-validate" 
+	enctype="multipart/form-data" onsubmit="return iframeCallback(this,dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>广告标题：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="ad_title"/></dd>
+			</dl>
+			<dl>
+				<dt>链接地址：</dt>
+				<dd><input type="text" class="required" size="10" style="width:100%" name="url"/></dd>
+			</dl>
+			<dl>
+				<dt>过期时间：</dt>
+				<dd><input type="text" class="date required" size="10" style="width:100%" name="endtime"/></dd>
+			</dl>
+			<dl>
+				<dt>广告图片：</dt>
+				<dd><input type="file" class="required" size="10" style="width:100%" name="pic"/></dd>
+			</dl>
+			<dl>
+				<dt>图片尺寸选择：</dt>
+				<dd><input type="radio" name="size" value="1" />960*90
+					<input type="radio" name="size" value="2" />250*208</dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

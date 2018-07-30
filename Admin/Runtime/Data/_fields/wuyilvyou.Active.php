@@ -1,0 +1,2 @@
+<?php
+return array ( 0 => 'active_id', 1 => 'active_name', 2 => 'uid', 3 => 'photo', 4 => 'start_time', 5 => 'end_time', 6 => 'addtime', 7 => 'join_num', 8 => 'active_city', 9 => 'active_province', 10 => 'address', 11 => 'state', 12 => 'description', 13 => 'type', '_autoinc' => true, '_pk' => 'active_id', ); ?>
